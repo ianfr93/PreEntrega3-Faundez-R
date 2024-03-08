@@ -298,6 +298,22 @@ h1 {
 }
 
 
+.navbar {
+  background-color: #343a40; /* Color de fondo del navbar */
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff; /* Color del icono del botón de alternar */
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important; /* Color del texto de los enlaces en el navbar */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #17a2b8 !important; /* Color del texto de los enlaces al pasar el ratón sobre ellos */
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -306,6 +322,7 @@ h1 {
   z-index: 1000;
   padding: 20px;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  background-color: #f8f9fa; /* Color de fondo del sidebar */
 }
 
 .sidebar-sticky {
@@ -317,8 +334,8 @@ h1 {
   overflow-y: auto;
 }
 
-.navbar {
-  z-index: 1001;
+.nav-link.active {
+  color: #007bff !important; /* Color del texto del enlace activo */
 }
 
 @media screen and (min-width: 1400px) {
