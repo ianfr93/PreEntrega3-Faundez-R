@@ -8,7 +8,7 @@
     { usuario: "usuario6", contraseña: "contraseña6" }
   ];
 
-  let intentosRestantes = 4;
+  let intentosRestantes = 5;
 
   // Función para autenticar al usuario
   function autenticarUsuario(event) {
@@ -39,7 +39,7 @@
 
   // Agregar evento de clic al botón con id "acceso"
 document.getElementById("acceso").addEventListener("click", function(event) {
-  if (intentosRestantes > 0) {
+  if (intentosRestantes > 5) {
     autenticarUsuario(event);
   }
 });
