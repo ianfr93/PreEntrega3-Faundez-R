@@ -15,63 +15,141 @@
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- estilos -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css">
 
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="container-fluid">
+    
+    <div class="container">
         <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="logo text-warning">
+                        <i class="fa fa-ravelry fa-2x logo-sym"></i><span class="logo-texto">Club Alpispa</span>
+                    </div>
 
-            <!-- Navbar vertical -->
-            <nav class="col-md-2 d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Logo y nombre del sitio -->
-                    <a class="navbar-brand" href="#">
-                        <img src="../assets/img/logo/logo-principal.png" alt="Logo" class="img-fluid" width="150"
-                            height="150">
-                    </a>
-                    <!-- Secciones del menú -->
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fas fa-barcode"></i> POS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-cash-register"></i> Ventas del día</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-box"></i> Ver Stock</a>
-                        </li>
-                        <!-- Separador -->
-                        <hr class="my-2">
-                    </ul>
+                    <div class="user">
+                        <img src="https://source.unsplash.com/VM42AzcEBdI/50x50/?faces" alt="">
+                        <span class='user-nombre'>Silvia Santana</span>
+                    </div>
+
+                    <nav class="menu-nav">
+                        <ul>
+                            <li class="menu-titles">principal</li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-barcode  menu-nav--icon fa-fw'></i><span>POS</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Ventas del
+                                        día</span></a></li>
+                            <li class="menu-items"><a href="#"><i class='fas fa-box  menu-nav--icon fa-fw'></i><span>Ver
+                                        Stock</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Cerrar
+                                        Caja</span></a></li>
+                            <li class="menu-titles">secundario</li>
+                            <li class="menu-items"><a href="#"><i class='fa fa-inbox  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Inbox</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fa fa-file-text-o  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Forms</span></a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </nav>
+            </div>
+            <!-- Resto del contenido principal aquí -->
 
-            <!-- Contenido principal -->
-            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-                <!-- Aquí va el contenido principal de tu página -->
-            </main>
 
-            <!-- Navbar horizontal -->
-            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil de Usuario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                        </li>
-                    </ul>
+
+            <div class="col-md-9">
+                <div class="barra">
+
+                    <a class='menu-toggle'><i class="fa fa-bars menu-nav--icon"></i></a>
+
+                    <!-- Navbar horizontal -->
+            
+                    <a href="https://wrappixel.com/demos/admin-templates/admin-pro/main/index2.html"
+                        class="float-right btn btn-info" target="_blank">Template</a>
                 </div>
-            </nav>
 
+                <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil de Usuario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="main-container">
+                    <div class="bg-white">
+                        <h1 class="text-center">Listado de pilotos</h1>
+                        <table class="table text-nowrap">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    <th scope="col">Comentario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto Hernandez</td>
+                                    <td>@mdo</td>
+                                    <td>Esto es un comentario</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>Esto es otro</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>Y esto es otro más</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="d-flex mt-3">
+                        <div class="col-md-3 bg-white">
+                            <img src="//unsplash.it/300/300" class="img-fluid" alt="">
+                            <p class="text-center mb-0">@fjdeveloper</p>
+                        </div>
+
+                        <div class="col-md-3 bg-white">
+                            <img src="//unsplash.it/301/300" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-md-3 bg-white">
+                            <img src="//unsplash.it/302/300" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-3 bg-white">
+                            <img src="//unsplash.it/303/300" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
     <!-- Enlace a main.js -->
     <script src="./assets/Js/main.js"></script>
