@@ -25,8 +25,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+
             <!-- Navbar vertical -->
-            <nav class="col-md-2 d-none d-md-block sidebar">
+            <nav class="col-md-2 d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <!-- Logo y nombre del sitio -->
                     <a class="navbar-brand" href="#">
@@ -46,28 +47,29 @@
                         </li>
                         <!-- Separador -->
                         <hr class="my-2">
-                        <!-- Sección de usuario y cerrar sesión -->
                     </ul>
-                    <!-- Mover "Perfil de Usuario" y "Cerrar Sesión" al lado derecho arriba al final -->
-                    <div class="mt-auto">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil de Usuario</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
 
             <!-- Contenido principal -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <!-- Contenido principal de tu página -->
-                <h1>Bienvenido a Tu Sitio</h1>
-                <p>Contenido de la página...</p>
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                <!-- Aquí va el contenido principal de tu página -->
             </main>
+
+            <!-- Navbar horizontal -->
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil de Usuario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
         </div>
     </div>
 
