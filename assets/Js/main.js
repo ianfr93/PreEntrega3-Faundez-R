@@ -98,55 +98,47 @@ function guardarYRedirigir() {
   }
 }
 
-// Resto del código que no ha cambiado
-document.addEventListener("DOMContentLoaded", function () {
-  // ... (resto del código)
-});
+$(document).ready(function () {
 
-  
-$('.menu-toggle').click(function () {
-  $('.contenedor').toggleClass('ancho-min');
-  if (window.matchMedia('(min-width: 1017px)').matches) {
-    /* Changes when we reach the min-width  */
+  $('.menu-toggle').click(function () {
+    $('.contenedor').toggleClass('ancho-min');
 
+    if (!window.matchMedia('(min-width: 1017px)').matches) {
+      /* Cambios cuando alcanzamos el min-width */
+      if (!$('.contenedor').hasClass("ancho-min")) {
 
-  } else {
-    // Reset for CSS changes – Still need a better way to do this!
-    if ($('.contenedor').hasClass("ancho-min")) {
-        // Handle the case when '.contenedor' has class "ancho-min"
-    } else {
-        // Handle the case when '.contenedor' doesn't have class "ancho-min"
+      } else {
+
+      }
     }
-}
+  });
 
-$('.menu-boton').click(function () {
-  $('.menu-nav-seg').toggleClass('open-menu-nav-seg');
-  $('.menu-boton i').toggleClass('fa-caret-right');
-  $('.menu-boton i').toggleClass('fa-caret-down');
-});
-
-(function ($) {
+  $('.menu-boton').click(function () {
+    $('.menu-nav-seg').toggleClass('open-menu-nav-seg');
+    $('.menu-boton i').toggleClass('fa-caret-right');
+    $('.menu-boton i').toggleClass('fa-caret-down');
+  });
 
   /*
-   * We need to turn it into a function.
-   * To apply the changes both on document ready and when we resize the browser.
+   * Necesitamos convertirlo en una función.
+   * Para aplicar los cambios tanto cuando el documento está listo como cuando cambiamos el tamaño del navegador.
    */
 
   function mediaSize() {
-    /* Set the matchMedia  992 + 250*/
+    /* Establecer el matchMedia 992 + 250*/
     if (window.matchMedia('(min-width: 1017px)').matches) {
-      /* Changes when we reach the min-width  */
+      /* Cambios cuando alcanzamos el min-width */
       $('.contenedor').removeClass('ancho-min');
+
     } else {
-      /* Reset for CSS changes – Still need a better way to do this! */
+      /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
       $('.contenedor').addClass('ancho-min');
+
     }
   };
 
-  /* Call the function */
+  /* Llama a la función */
   mediaSize();
-  /* Attach the function to the resize event listener */
+  /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
   window.addEventListener('resize', mediaSize, false);
-
-})(jQuery);
-})
+});
