@@ -297,7 +297,9 @@ h1 {
   margin-top: 20px;
 }
 /* Estilo para el menu despegable */
-
+.menu-lateral {
+  width: 100%;
+}
 .contenedor {
   display: flex;
 }
