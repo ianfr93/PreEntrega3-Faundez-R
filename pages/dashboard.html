@@ -23,83 +23,53 @@
 </head>
 
 <body>
- <!-- Agrega un elemento div para mostrar mensajes -->
-<div id="mensaje" class="alert" style="display:none;"></div>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="ruta/de/tu/logo.png" alt="Logo" class="img-fluid" width="30" height="30">
-            Tu Sitio
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <!-- Agregamos "POS", "Ventas del día" y "Ver Stock" en la parte inferior izquierda -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-cash-register"></i> Ventas del día</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-box"></i> Ver Stock</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-barcode"></i> POS</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Muevo "Cerrar Sesión" a la parte superior derecha -->
-        <div class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-            </li>
-            <!-- Agrega el perfil de usuario al final del Navbar -->
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Ver Perfil</a>
-            </li>
+        <div class="row">
+            <!-- Navbar vertical -->
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <!-- Logo y nombre del sitio -->
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/img/logo/logo-principal.png" alt="Logo" class="img-fluid" width="150"
+                            height="150">
+                    </a>
+                    <!-- Secciones del menú -->
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"><i class="fas fa-barcode"></i> POS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-cash-register"></i> Ventas del día</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-box"></i> Ver Stock</a>
+                        </li>
+                        <!-- Separador -->
+                        <hr class="my-2">
+                        <!-- Sección de usuario y cerrar sesión -->
+                    </ul>
+                    <!-- Mover "Perfil de Usuario" y "Cerrar Sesión" al lado derecho arriba al final -->
+                    <div class="mt-auto">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil de Usuario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <!-- Contenido principal de tu página -->
+                <h1>Bienvenido a Tu Sitio</h1>
+                <p>Contenido de la página...</p>
+            </main>
         </div>
     </div>
-</nav>
-
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="fas fa-home"></i> Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-box"></i> Productos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-cogs"></i> Servicios
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-envelope"></i> Contacto
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <!-- Contenido principal de tu página -->
-            <h1>Bienvenido a Tu Sitio</h1>
-            <p>Contenido de la página...</p>
-        </main>
-    </div>
-</div>
-
 
     <!-- Enlace a main.js -->
     <script src="./assets/Js/main.js"></script>
