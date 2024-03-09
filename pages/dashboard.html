@@ -23,7 +23,7 @@
 </head>
 
 <body>
-   <!-- Agrega un elemento div para mostrar mensajes -->
+ <!-- Agrega un elemento div para mostrar mensajes -->
 <div id="mensaje" class="alert" style="display:none;"></div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -38,24 +38,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <!-- Agregamos "POS", "Ventas del día" y "Ver Stock" en la parte inferior izquierda -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-barcode"></i> POS</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fas fa-cash-register"></i> Ventas del día <span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#"><i class="fas fa-cash-register"></i> Ventas del día</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-box"></i> Ver Stock</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                </li>
-                <!-- Agrega el perfil de usuario al final del Navbar -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user"></i> Ver Perfil</a>
+                    <a class="nav-link" href="#"><i class="fas fa-barcode"></i> POS</a>
                 </li>
             </ul>
+        </div>
+        <!-- Muevo "Cerrar Sesión" a la parte superior derecha -->
+        <div class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            </li>
+            <!-- Agrega el perfil de usuario al final del Navbar -->
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-user"></i> Ver Perfil</a>
+            </li>
         </div>
     </div>
 </nav>
@@ -96,7 +99,6 @@
         </main>
     </div>
 </div>
- 
 
 
     <!-- Enlace a main.js -->
