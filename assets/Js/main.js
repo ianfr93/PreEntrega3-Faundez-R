@@ -142,3 +142,6 @@ $(document).ready(function () {
   /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
   window.addEventListener('resize', mediaSize, false);
 });
+
+
+
