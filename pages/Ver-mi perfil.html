@@ -70,74 +70,119 @@
             </div>
 
 
-           <!-- Resto de tu contenido -->
+            <!-- Resto del contenido principal aquí -->
 
-    <div class="main-container">
-        <div class="container">
-            <form class="well form-horizontal" action="" method="post" id="contact_form">
-                <fieldset>
-                    <!-- Form Name -->
-                    <legend>Contact Us Today!</legend>
+            <div class="col-10 md-10">
+                <div class="barra d-flex align-items-center">
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Nombre</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="first_name" placeholder="First Name" class="form-control" type="text">
+                    <a class='menu-toggle'><i class="fa fa-bars menu-nav--icon"></i></a>
+
+                    <!-- Navbar horizontal -->
+
+
+                    <!-- Navbar horizontal centrado -->
+                    <div class="d-flex justify-content-center ml-auto">
+                        <nav class="navbar navbar-expand-md navbar-light bg-light">
+                            <a class='menu-toggle navbar-toggler' data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"><i class="fa fa-bars menu-nav--icon"></i></a>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <!-- Tus otros elementos del menú aquí -->
+                                    <li class="nav-item">
+                                        <a class="nav-link btn btn-primary" href="../index.html"><i
+                                                class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
+                        </nav>
+
                     </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Rut</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="last_name" placeholder="Last Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <!-- Resto de tu contenido principal aquí -->
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">E-mail</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
+                <div class="main-container">
+                    <div class="container">
+                        <form class="well form-horizontal" action="" method="post" id="contact_form">
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Contact Us Today!</legend>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Dirección</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Nombre</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-user"></i></span>
+                                            <input name="first_name" placeholder="First Name" class="form-control"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <!-- Success message -->
-                    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Rut</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-user"></i></span>
+                                            <input name="last_name" placeholder="Last Name" class="form-control"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <!-- Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"></label>
-                        <div class="col-md-4">
-                            <button type="button" class="btn btn-warning" id="sendButton">Send <span class="glyphicon glyphicon-send"></span></button>
-                        </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">E-mail</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-envelope"></i></span>
+                                            <input name="email" placeholder="E-Mail Address" class="form-control"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Dirección</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                    class="glyphicon glyphicon-earphone"></i></span>
+                                            <input name="phone" placeholder="(845)555-1212" class="form-control"
+                                                type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Success message -->
+                                <div class="alert alert-success" role="alert" id="success_message">Success <i
+                                        class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get
+                                    back to you shortly.</div>
+
+                                <!-- Button -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-warning" id="sendButton">Guardar<span
+                                                class="glyphicon glyphicon-send"></span></button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
-                </fieldset>
-            </form>
+                </div>
+            </div>
+
+
         </div>
     </div>
-</div>
 
 
 
@@ -146,12 +191,16 @@
 
 
 
-    
+
+
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
     </script>
+    <!-- Bootstrap Validator -->
+    <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js"></script>
 
     <!-- Enlace a main.js -->
     <script src="../assets/Js/main.js"></script>

@@ -189,27 +189,36 @@ $(document).ready(function () {
               }
           },
       }
-  });
-
-  $('#sendButton').on('click', function () {
-      $('#contact_form').bootstrapValidator('validate');
-  });
-
-  $('#contact_form').on('success.form.bv', function (e) {
+  })
+  .on('success.form.bv', function (e) {
+      // Prevent the default form submission
       e.preventDefault();
+
+      // Show success message
       $('#success_message').slideDown({ opacity: "show" }, "slow");
+
+      // Reset the form
       $('#contact_form').data('bootstrapValidator').resetForm();
+  });
 
-      var $form = $(e.target);
-      var bv = $form.data('bootstrapValidator');
+  // Handling the button click
+  $('#sendButton').on('click', function () {
+      // Trigger the form validation
+      var validator = $('#contact_form').data('bootstrapValidator');
+      validator.validate();
 
-      $.post($form.attr('action'), $form.serialize(), function (result) {
-          console.log(result);
-      }, 'json');
+      // Check if the form is valid before submitting
+      if (validator.isValid()) {
+          // Perform any additional actions or submit the form
+          // For now, we'll just log a message to the console
+          console.log('Form is valid. Submitting...');
+      } else {
+          // Handle invalid form
+          // You can display error messages or change the styling here
+          alert('Form contains validation errors. Please check and correct them.');
+      }
   });
 });
-
-
 
 
 
