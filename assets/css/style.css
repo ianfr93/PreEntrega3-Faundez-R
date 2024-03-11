@@ -302,9 +302,17 @@ h1 {
 }
 .contenedor {
   display: flex;
+  
 }
+
+.bg-white{
+  max-width: 100%;
+  padding-left:  30px;
+  background-color: transparent !important;
+  }
+  
 .main-container .bg-white {
-  padding: 15px;
+  padding-left:  30px;
 }
 .main {
   flex-grow: 1;
@@ -466,8 +474,21 @@ a.menu-toggle {
   color:#808495;
 }
 
+.category-list .btn {
+  width: 100%; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
 
-
+.search-bar .btn {
+  height: 38px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+.search-bar .form-control {
+  width: 90%; 
+}
 
 
 @media screen and (min-width: 1400px) {

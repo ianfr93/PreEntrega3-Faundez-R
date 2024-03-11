@@ -26,7 +26,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="sidebar" style="display: flex; flex-direction: column; align-items: center; height: 100%;">
                     <a href="./dashboard.html" style="margin-top: 15px;">
                         <img src="../assets/img/logo/logo-blanco.png" alt="Logo de tu empresa" style="width: 130px;">
@@ -68,9 +68,11 @@
                     </nav>
                 </div>
             </div>
+
+
             <!-- Resto del contenido principal aquí -->
 
-            <div class="col-md-9">
+            <div class="col-10 md-10">
                 <div class="barra d-flex align-items-center">
 
                     <a class='menu-toggle'><i class="fa fa-bars menu-nav--icon"></i></a>
@@ -102,379 +104,402 @@
 
                 <div class="main-container">
                     <div class="bg-white">
- <!-- Barra de búsqueda -->
- <div class="search-bar">
-    <input type="text" class="form-control" placeholder="Buscar...">
-    <button class="btn btn-primary">Buscar</button>
-</div>
+                        <!-- Barra de búsqueda -->
+                        <div class="search-bar d-flex">
+                            <input type="text" class="form-control" placeholder="Buscar...">
+                            <button class="btn btn-primary">Buscar</button>
 
-<!-- Categorías de productos -->
-<div class="categories">
-    <h2 class="text-center">Categorías</h2>
-    <div class="category-list row text-center col-8">
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('alimentos')">Alimentos</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('bebidas')">Bebidas</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('aseo')">Aseo y Limpieza</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria4')">Categoría 4</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria5')">Categoría 5</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria6')">Categoría 6</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria7')">Categoría 7</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria8')">Categoría 8</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria9')">Categoría 9</button>
-        </div>
-        <div class="col-2 mb-4">
-            <button class="btn btn-primary category mb-2" onclick="filtrarProductos('categoria10')">Categoría 10</button>
-        </div>
-    </div>
-</div>
-
-
-
-
-    
-<!-- Tarjetas de productos -->
-<div class="products">
-    <h2 class="text-center mt-4">Productos</h2>
-    <div class="row">
-        <!-- Primera fila -->
-      
-<div class="row">
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 5</h5>
-                <p class="card-text">Marca: Marca 5</p>
-                <p class="card-text">Precio: $50.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 6</h5>
-                <p class="card-text">Marca: Marca 6</p>
-                <p class="card-text">Precio: $60.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 7 -->
-        <div class="card">
-            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 7</h5>
-                <p class="card-text">Marca: Marca 7</p>
-                <p class="card-text">Precio: $70.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 8 -->
-        <div class="card">
-            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 8</h5>
-                <p class="card-text">Marca: Marca 8</p>
-                <p class="card-text">Precio: $80.00</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin de la segunda fila -->
-
-       
-<!-- Segunda fila -->
-<div class="row">
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 5</h5>
-                <p class="card-text">Marca: Marca 5</p>
-                <p class="card-text">Precio: $50.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 6</h5>
-                <p class="card-text">Marca: Marca 6</p>
-                <p class="card-text">Precio: $60.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 7 -->
-        <div class="card">
-            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 7</h5>
-                <p class="card-text">Marca: Marca 7</p>
-                <p class="card-text">Precio: $70.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 8 -->
-        <div class="card">
-            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 8</h5>
-                <p class="card-text">Marca: Marca 8</p>
-                <p class="card-text">Precio: $80.00</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin de la segunda fila -->
-
-<!-- Segunda fila -->
-<div class="row">
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 5</h5>
-                <p class="card-text">Marca: Marca 5</p>
-                <p class="card-text">Precio: $50.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 6</h5>
-                <p class="card-text">Marca: Marca 6</p>
-                <p class="card-text">Precio: $60.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 7 -->
-        <div class="card">
-            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 7</h5>
-                <p class="card-text">Marca: Marca 7</p>
-                <p class="card-text">Precio: $70.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 8 -->
-        <div class="card">
-            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 8</h5>
-                <p class="card-text">Marca: Marca 8</p>
-                <p class="card-text">Precio: $80.00</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin de la segunda fila -->
-<!-- Segunda fila -->
-<div class="row">
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 5</h5>
-                <p class="card-text">Marca: Marca 5</p>
-                <p class="card-text">Precio: $50.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 6</h5>
-                <p class="card-text">Marca: Marca 6</p>
-                <p class="card-text">Precio: $60.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 7 -->
-        <div class="card">
-            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 7</h5>
-                <p class="card-text">Marca: Marca 7</p>
-                <p class="card-text">Precio: $70.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 8 -->
-        <div class="card">
-            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 8</h5>
-                <p class="card-text">Marca: Marca 8</p>
-                <p class="card-text">Precio: $80.00</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin de la segunda fila -->
-<!-- Segunda fila -->
-<div class="row">
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 5 -->
-        <div class="card">
-            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 5</h5>
-                <p class="card-text">Marca: Marca 5</p>
-                <p class="card-text">Precio: $50.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 6 -->
-        <div class="card">
-            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 6</h5>
-                <p class="card-text">Marca: Marca 6</p>
-                <p class="card-text">Precio: $60.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 7 -->
-        <div class="card">
-            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 7</h5>
-                <p class="card-text">Marca: Marca 7</p>
-                <p class="card-text">Precio: $70.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2 mb-4">
-        <!-- Tarjeta 8 -->
-        <div class="card">
-            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
-            <div class="card-body">
-                <h5 class="card-title">Nombre del Producto 8</h5>
-                <p class="card-text">Marca: Marca 8</p>
-                <p class="card-text">Precio: $80.00</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin de la segunda fila -->
-
-    
-
-
-
-
-
-                        
-                        <h1 class="text-center">Listado de pilotos</h1>
-                        <table class="table text-nowrap">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                    <th scope="col">Comentario</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto Hernandez</td>
-                                    <td>@mdo</td>
-                                    <td>Esto es un comentario</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Esto es otro</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td>Y esto es otro más</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="d-flex mt-3">
-                        <div class="col-md-3 bg-white">
-                            <img src="//unsplash.it/300/300" class="img-fluid" alt="">
-                            <p class="text-center mb-0">@fjdeveloper</p>
                         </div>
 
-                        <div class="col-md-3 bg-white">
-                            <img src="//unsplash.it/301/300" class="img-fluid" alt="">
+
+                        <div class="container">
+                            <div class="row">
+                                <!-- Categorías de productos -->
+                                <div class="col-md-4">
+                                    <div class="categories">
+                                        <h2 class="text-center">Categorías</h2>
+                                        <div class="row text-center category-list">
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('alimentos')">Alimentos</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('bebidas')">Bebidas</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('aseo')">Aseo y Limpieza</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria4')">Categoría 4</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria5')">Categoría 5</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria6')">Categoría 6</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria7')">Categoría 7</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria8')">Categoría 8</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria9')">Categoría 9</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria10')">Categoría 10</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria11')">Categoría 11</button>
+                                            </div>
+                                            <div class="col-4 mb-4">
+                                                <button class="btn btn-primary category mb-2"
+                                                    onclick="filtrarProductos('categoria12')">Categoría 12</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Secciones -->
+                                <div class="col-md-8">
+                                    <div class="sections-container">
+                                        <h2 class="text-center">Secciones</h2>
+                                        <div class="row text-center">
+                                            <div class="col-md-4">
+                                                <button class="btn btn-primary section-btn" onclick="ingresarDinero()">
+                                                    <i class="fas fa-money-bill-wave"></i> Ingresar Dinero
+                                                </button>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button class="btn btn-primary section-btn" onclick="sacarDinero()">
+                                                    <i class="fas fa-money-bill"></i> Sacar Dinero
+                                                </button>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button class="btn btn-primary section-btn" onclick="cerrarCaja()">
+                                                    <i class="fas fa-lock"></i> Cerrar Caja
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-md-3 bg-white">
-                            <img src="//unsplash.it/302/300" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-3 bg-white">
-                            <img src="//unsplash.it/303/300" class="img-fluid" alt="">
+
+
+
+
+
+                        <!-- Tarjetas de productos -->
+                        <div class="products">
+                            <h2 class="text-center mt-4">Productos</h2>
+                            <div class="row">
+                                <!-- Primera fila -->
+
+                                <div class="row">
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 5 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 5</h5>
+                                                <p class="card-text">Marca: Marca 5</p>
+                                                <p class="card-text">Precio: $50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 6 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 6</h5>
+                                                <p class="card-text">Marca: Marca 6</p>
+                                                <p class="card-text">Precio: $60.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 7 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 7</h5>
+                                                <p class="card-text">Marca: Marca 7</p>
+                                                <p class="card-text">Precio: $70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 8 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 8</h5>
+                                                <p class="card-text">Marca: Marca 8</p>
+                                                <p class="card-text">Precio: $80.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin de la segunda fila -->
+
+
+                                <!-- Segunda fila -->
+                                <div class="row">
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 5 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 5</h5>
+                                                <p class="card-text">Marca: Marca 5</p>
+                                                <p class="card-text">Precio: $50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 6 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 6</h5>
+                                                <p class="card-text">Marca: Marca 6</p>
+                                                <p class="card-text">Precio: $60.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 7 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 7</h5>
+                                                <p class="card-text">Marca: Marca 7</p>
+                                                <p class="card-text">Precio: $70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 8 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 8</h5>
+                                                <p class="card-text">Marca: Marca 8</p>
+                                                <p class="card-text">Precio: $80.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin de la segunda fila -->
+
+                                <!-- Segunda fila -->
+                                <div class="row">
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 5 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 5</h5>
+                                                <p class="card-text">Marca: Marca 5</p>
+                                                <p class="card-text">Precio: $50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 6 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 6</h5>
+                                                <p class="card-text">Marca: Marca 6</p>
+                                                <p class="card-text">Precio: $60.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 7 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 7</h5>
+                                                <p class="card-text">Marca: Marca 7</p>
+                                                <p class="card-text">Precio: $70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 8 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 8</h5>
+                                                <p class="card-text">Marca: Marca 8</p>
+                                                <p class="card-text">Precio: $80.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin de la segunda fila -->
+                                <!-- Segunda fila -->
+                                <div class="row">
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 5 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 5</h5>
+                                                <p class="card-text">Marca: Marca 5</p>
+                                                <p class="card-text">Precio: $50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 6 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 6</h5>
+                                                <p class="card-text">Marca: Marca 6</p>
+                                                <p class="card-text">Precio: $60.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 7 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 7</h5>
+                                                <p class="card-text">Marca: Marca 7</p>
+                                                <p class="card-text">Precio: $70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 8 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 8</h5>
+                                                <p class="card-text">Marca: Marca 8</p>
+                                                <p class="card-text">Precio: $80.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin de la segunda fila -->
+                                <!-- Segunda fila -->
+                                <div class="row">
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 5 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen5.jpg" class="card-img-top" alt="Producto 5">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 5</h5>
+                                                <p class="card-text">Marca: Marca 5</p>
+                                                <p class="card-text">Precio: $50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 6 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen6.jpg" class="card-img-top" alt="Producto 6">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 6</h5>
+                                                <p class="card-text">Marca: Marca 6</p>
+                                                <p class="card-text">Precio: $60.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 7 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen7.jpg" class="card-img-top" alt="Producto 7">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 7</h5>
+                                                <p class="card-text">Marca: Marca 7</p>
+                                                <p class="card-text">Precio: $70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-4">
+                                        <!-- Tarjeta 8 -->
+                                        <div class="card">
+                                            <img src="ruta_de_imagen8.jpg" class="card-img-top" alt="Producto 8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nombre del Producto 8</h5>
+                                                <p class="card-text">Marca: Marca 8</p>
+                                                <p class="card-text">Precio: $80.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin de la segunda fila -->
+
+
+<div class="cart-container">
+        <div class="product-item">
+            <div class="product-info">
+                <img src="ruta_de_imagen1.jpg" alt="Producto 1">
+                <div>
+                    <h4>Nombre del Producto 1</h4>
+                    <p>Precio: $50.00</p>
+                </div>
+            </div>
+            <div class="product-actions">
+                <div class="quantity">Cantidad: 2</div>
+                <div class="action-buttons">
+                    <button onclick="increaseQuantity()">+</button>
+                    <button onclick="decreaseQuantity()">-</button>
+                    <button onclick="removeProduct()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+                                
+
+                            
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
