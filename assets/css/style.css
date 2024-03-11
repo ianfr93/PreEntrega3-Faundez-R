@@ -490,6 +490,7 @@ a.menu-toggle {
   width: 90%; 
 }
 
+#success_message{ display: none;}
 
 @media screen and (min-width: 1400px) {
   .register-login .bg-image-container {

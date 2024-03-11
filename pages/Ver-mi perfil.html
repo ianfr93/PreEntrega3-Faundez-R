@@ -6,10 +6,7 @@
     <meta name="description" content="Sistena POS WEB PUNTO DE VENTA PARA NEGOCIOS." />
     <meta name="keywords" content="comida, Ventas, Articulos, Supermercado, Tienda, Categorias, Productos, Calcular" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Menu-flotante</title>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>PreEntrega3-Faundez-dashboard</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,119 +23,183 @@
 </head>
 
 <body>
-   
-    <div class="container-2">
-      
-        <div class="row mb-3">
-        
-            <div class="col-12">
-            
-               
 
-                <!-- Rectángulo azul con ícono de cajero y título -->
-                <div class="rectangulo-BG bg-primary text-white p-4 rounded">
-                    <!-- Ícono de cajero -->
-                    <i class="fas fa-cash-register fa-3x d-block mb-3"></i>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidebar" style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+                    <a href="./dashboard.html" style="margin-top: 15px;">
+                        <img src="../assets/img/logo/logo-blanco.png" alt="Logo de tu empresa" style="width: 130px;">
+                    </a>
 
-                    <!-- Título -->
-                    <h2 class="h4">Cajas disponibles</h2>
+                    <div class="user" style="display: flex; align-items: center;">
+                        <img src="../assets/img/iconos/Status=None, Size=24px, Presence=None.png"
+                            alt="Logo de tu empresa" style="width: 45px; margin-right: 20px;">
+                        <div class="user-info">
+                            <span class='user-nombre' style="margin-right: 50px; margin-left: 2px;">Ian Faúndez
+                                R.</span>
+                            <br>
+                            <a class="perfil-link" href="./Ver-mi perfil.html">Ver mi perfil </a>
+                        </div>
+                    </div>
+
+
+
+                    <nav class="menu-nav">
+                        <ul>
+                            <li class="menu-titles">principal</li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-barcode  menu-nav--icon fa-fw'></i><span>POS</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Ventas del
+                                        día</span></a></li>
+                            <li class="menu-items"><a href="#"><i class='fas fa-box  menu-nav--icon fa-fw'></i><span>Ver
+                                        Stock</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Cerrar
+                                        Caja</span></a></li>
+                            <li class="menu-titles">secundario</li>
+                            <li class="menu-items"><a href="#"><i class='fa fa-inbox  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Inbox</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fa fa-file-text-o  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Forms</span></a></li>
+                        </ul>
+                    </nav>
                 </div>
-
-                <img src="../assets/img/iconos/warning-1.gif" alt="Icono" class="img-fluid mx-auto d-block"
-                    style="max-width: 100px; max-height: 100px; margin-top: 20px;">
-                <h2 style="color: #2b5c6f; font-size: 20px; font-weight: medium; margin-top: 20px;">"Hemos notado que
-                    aún no has realizado
-                    la apertura de caja necesaria para acceder al POS. Por favor, realiza la apertura antes de
-                    continuar."</h2>
-
             </div>
-        </div>
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectEmpresa" class="custom-select-label">Empresa:</label>
-                        <select id="selectEmpresa" class="form-select">
+
+            <!-- Resto del contenido principal aquí -->
+
+            <div class="col-10 md-10">
+                <div class="barra d-flex align-items-center">
+
+                    <a class='menu-toggle'><i class="fa fa-bars menu-nav--icon"></i></a>
+
+                    <!-- Navbar horizontal -->
+
+
+                    <!-- Navbar horizontal centrado -->
+                    <div class="d-flex justify-content-center ml-auto">
+                        <nav class="navbar navbar-expand-md navbar-light bg-light">
+                            <a class='menu-toggle navbar-toggler' data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"><i class="fa fa-bars menu-nav--icon"></i></a>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <!-- Tus otros elementos del menú aquí -->
+                                    <li class="nav-item">
+                                        <a class="nav-link btn btn-primary" href="../index.html"><i
+                                                class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                    </div>
+
+                </div>
+                <!-- Resto de tu contenido -->
+
+                <div class="main-container">
+
+                    <div class="container">
+
+                        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Contact Us Today!</legend>
+                    
+                    <!-- Text input-->
+                    
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">First Name</label>  
+                      <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" >Last Name</label> 
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                           <div class="form-group">
+                      <label class="col-md-4 control-label">E-Mail</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <!-- Text input-->
                            
-                            <option>Seleccione</option>
-                            <option>Empresa-Las condes</option>
-                            <option>Empresa-Huechuraba</option>
-                            <option>Empresa-Recoleta</option>
-                            <option>Empresa-Maipu</option>
-                        </select>
-            
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Phone #</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectCaja" class="custom-select-label">Caja:</label>
-                        <select id="selectCaja" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Caja-1</option>
-                            <option>Caja-2</option>
-                            <option>Caja-3</option>
-                            <option>Caja-4</option>
-                        </select>
+                    
+                    <!-- Text input-->
+                          
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Address</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="address" placeholder="Address" class="form-control" type="text">
+                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectImprimir" class="custom-select-label">¿Cómo desea imprimir?:</label>
-                        <select id="selectImprimir" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Terminal de pago Smart</option>
-                            <option>PDF</option>
-                            <option>Redelcom POS</option>
-                            <option>Smartphone</option>
-                        </select>
+                    
+                    <!-- Text input-->
+                     
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">City</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="city" placeholder="city" class="form-control"  type="text">
+                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectDocumento" class="custom-select-label">Tipo de Documento:</label>
-                        <select id="selectDocumento" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Factura</option>
-                            <option>Recibo</option>
-                            <option>Informe</option>
-                        </select>
+                    
+                   
+                    <!-- Success message -->
+                    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+                    
+                    <!-- Button -->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label"></label>
+                      <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+                      </div>
                     </div>
-                </div>
-            </div>
-            
-
-        </div>
-
-        <div class="col-md-12">
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="monto" style="margin-bottom: 10px; display: block;color: #2b5c6f; font-weight: 600;">Monto en dinero:</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span> <!-- Signo de peso -->
-                        <input type="number" class="form-control" id="monto" step="1" value="0">
+                    
+                    </fieldset>
+                    </form>
                     </div>
-               
-                </div>
-            </div>
-        </div>
-
-
-        <div class="botones-caja">
-            <div class="row mb-8">
-                <div class="col text-end">
-                    <button type="button" class="btn btn-secondary">Salir</button>
-                    <button type="button" id="acceso" class="btn btn-primary" onclick="guardarYRedirigir()">Guardar</button>
-
-
+                        </div><!-- /.container -->
 
                 </div>
             </div>
@@ -146,17 +207,15 @@
     </div>
 
 
-
-
-
-
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
+    </script>
 
     <!-- Enlace a main.js -->
     <script src="../assets/Js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
