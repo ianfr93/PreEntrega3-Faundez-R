@@ -134,6 +134,96 @@ function guardarYRedirigir() {
   }
 }
 
+
+
+$(document).ready(function () {
+  $('#contact_form').bootstrapValidator({
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      live: 'enabled',
+      fields: {
+          first_name: {
+              validators: {
+                  notEmpty: {
+                      message: 'Please supply your first name'
+                  },
+                  stringLength: {
+                      min: 2,
+                      message: 'Please enter at least 2 characters'
+                  }
+              }
+          },
+          last_name: {
+              validators: {
+                  notEmpty: {
+                      message: 'Please supply your last name'
+                  },
+                  stringLength: {
+                      min: 2,
+                      message: 'Please enter at least 2 characters'
+                  }
+              }
+          },
+          email: {
+              validators: {
+                  notEmpty: {
+                      message: 'Please supply your email address'
+                  },
+                  emailAddress: {
+                      message: 'Please supply a valid email address'
+                  }
+              }
+          },
+          phone: {
+              validators: {
+                  notEmpty: {
+                      message: 'Please supply your phone number'
+                  },
+                  phone: {
+                      country: 'US',
+                      message: 'Please supply a valid phone number with area code'
+                  }
+              }
+          },
+      }
+  });
+
+  $('#sendButton').on('click', function () {
+      $('#contact_form').bootstrapValidator('validate');
+  });
+
+  $('#contact_form').on('success.form.bv', function (e) {
+      e.preventDefault();
+      $('#success_message').slideDown({ opacity: "show" }, "slow");
+      $('#contact_form').data('bootstrapValidator').resetForm();
+
+      var $form = $(e.target);
+      var bv = $form.data('bootstrapValidator');
+
+      $.post($form.attr('action'), $form.serialize(), function (result) {
+          console.log(result);
+      }, 'json');
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function () {
 
   $('.menu-toggle').click(function () {
