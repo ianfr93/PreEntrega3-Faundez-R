@@ -96,6 +96,10 @@ document.getElementById("acceso").addEventListener("click", function (event) {
   }
 });
 
+
+
+
+
 // Funciones y variables para la pantalla de caja
 let empresa;
 let caja;
@@ -134,7 +138,23 @@ function guardarYRedirigir() {
   }
 }
 
+ // Función para mostrar el perfil del usuario
+ function mostrarPerfilUsuario(usuario) {
+  // Establecer valores en los campos del formulario
+  $('#contact_form input[name="first_name"]').val(usuario.perfil.nombre);
+  $('#contact_form input[name="last_name"]').val(usuario.perfil.rut);
+  $('#contact_form input[name="email"]').val(usuario.perfil.correo);
+  $('#contact_form input[name="phone"]').val(usuario.perfil.direccion);
 
+  console.log(`Información del perfil para ${usuario.usuario}:`);
+  console.log(`Nombre: ${usuario.perfil.nombre}`);
+  console.log(`Rut: ${usuario.perfil.rut}`);
+  console.log(`Correo: ${usuario.perfil.correo}`);
+  console.log(`Dirección: ${usuario.perfil.direccion}`);
+  console.log("----------------------------------");
+
+  gestionarCambios();
+}
 
 $(document).ready(function () {
   $('#contact_form').bootstrapValidator({
@@ -203,19 +223,19 @@ $(document).ready(function () {
 
   // Handling the button click
   $('#sendButton').on('click', function () {
-      // Trigger the form validation
-      var validator = $('#contact_form').data('bootstrapValidator');
-      validator.validate();
+    // Trigger the form validation
+    var validator = $('#contact_form').data('bootstrapValidator');
+    validator.validate();
 
-      // Check if the form is valid before submitting
-      if (validator.isValid()) {
-          // Perform any additional actions or submit the form
-          // For now, we'll just log a message to the console
-          console.log('Form is valid. Submitting...');
+       // Check if the form is valid before submitting
+       if (validator.isValid()) {
+        // Perform any additional actions or submit the form
+        // For now, we'll just log a message to the console
+        console.log('Form is valid. Submitting...');
       } else {
-          // Handle invalid form
-          // You can display error messages or change the styling here
-          alert('Form contains validation errors. Please check and correct them.');
+        // Handle invalid form
+        // You can display error messages or change the styling here
+        alert('Form contains validation errors. Please check and correct them.');
       }
   });
 });
