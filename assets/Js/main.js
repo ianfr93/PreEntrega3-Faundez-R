@@ -174,107 +174,58 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-class Producto {
-  constructor(nombre, precio, stock) {
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
-  }
+const tablaProductos = document.getElementById('tablaProductos');
 
-  vender(cantidad) {
-    this.stock -= cantidad;
-    return this.precio * cantidad;
-  }
+class Producto {
+    constructor(nombre, precio, stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    vender(cantidad) {
+        this.stock -= cantidad;
+        return this.precio * cantidad;
+    }
 }
 
 const productos = [
-  new Producto("Aceite Belmont 1lt", 4000, 800),
-  new Producto("Coca Cola 3lts", 3000, 500),
-  new Producto("Lavalozas Quix 1lt", 2850, 700),
-  new Producto("Leche Soprole Chocolate 1lt", 1200, 1200),
-  new Producto("Galletas Oreo Chocolate", 850, 80),
-  new Producto("Arroz Miraflores Granel", 1600, 980),
-  new Producto("Papel Higiénico Suave 4 rollos", 2000, 450),
-  new Producto("Manzanas Royal Gala (kg)", 3500, 600),
-  new Producto("Jabón Dove 100g", 1200, 250),
-  new Producto("Atún en lata 160g", 2500, 560),
+    new Producto("Aceite Belmont 1lt", 4000, 800),
+    new Producto("Coca Cola 3lts", 3000, 500),
+    new Producto("Lavalozas Quix 1lt", 2850, 700),
+    new Producto("Leche Soprole Chocolate 1lt", 1200, 1200),
+    new Producto("Galletas Oreo Chocolate", 850, 80),
+    new Producto("Arroz Miraflores Granel", 1600, 980),
+    new Producto("Papel Higiénico Suave 4 rollos", 2000, 450),
+    new Producto("Manzanas Royal Gala (kg)", 3500, 600),
+    new Producto("Jabón Dove 100g", 1200, 250),
+    new Producto("Atún en lata 160g", 2500, 560),
 ];
 
-
-// Función para cargar productos
 function cargarProductos() {
-  let error;
-  let productoSeleccionado;
+    productos.forEach(function(producto) {
+        // Añade el producto a la tabla
+        const fila = document.createElement('tr');
+        const celdaNombre = document.createElement('td');
+        const celdaPrecio = document.createElement('td');
+        const celdaCantidad = document.createElement('td');
 
-  do {
-    error = 0;
-    let producto = parseInt(prompt("Ingrese el código de producto que quiere llevar" + "\n" +
-      "1-Aceite Belmont 1lt" + "\n" +
-      "2-Coca Cola 3lts" + "\n" +
-      "3-Lavalozas Quix 1lt" + "\n" +
-      "4-Leche Soprole Chocolate 1lt" + "\n" +
-      "5-Galletas Oreo Chocolate" + "\n" +
-      "6-Arroz Miraflores Granel" + "\n" +
-      "7-Papel Higiénico Suave 4 rollos" + "\n" +
-      "8-Manzanas Royal Gala (kg)" + "\n" +
-      "9-Jabón Dove 100g" + "\n" +
-      "10-Atún en lata 160g"
-    ));
+        celdaNombre.textContent = producto.nombre;
+        celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
+        celdaCantidad.textContent = producto.stock;
 
-    switch (producto) {
-      case 1:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[0];
-        break;
-      case 2:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[1];
-        break;
-      case 3:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[2];
-        break;
-      case 4:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[3];
-        break;
-      case 5:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[4];
-        break;
-      case 6:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[5];
-        break;
-      case 7:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[6];
-        break;
-      case 8:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[7];
-        break;
-      case 9:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[8];
-        break;
-      case 10:
-        alert('Tu producto se agregó de manera exitosa');
-        productoSeleccionado = productos[9];
-        break;
-      default:
-        alert('Opción incorrecta. Digite nuevamente para poder continuar con su compra');
-        error = 1;
-    }
-  } while (error === 1);
+        fila.appendChild(celdaNombre);
+        fila.appendChild(celdaPrecio);
+        fila.appendChild(celdaCantidad);
 
-  return {
-    producto: productoSeleccionado.nombre,
-    precio: productoSeleccionado.precio
-  };
+        tablaProductos.appendChild(fila);
+    });
 }
 
-
+// Llama a la función para cargar productos al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+    cargarProductos();
+});
 
 
 
