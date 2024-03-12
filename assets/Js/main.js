@@ -174,55 +174,59 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const tablaProductos = document.getElementById('tablaProductos');
+document.addEventListener('DOMContentLoaded', function () {
+  const tablaProductos = document.getElementById('tablaProductos');
 
-class Producto {
-    constructor(id, nombre, precio, stock) {
-        this.id = id;  // Asigna un identificador único a cada producto
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-    }
+  class Producto {
+      constructor(id, nombre, precio, stock) {
+          this.id = id;  
+          this.nombre = nombre;
+          this.precio = precio;
+          this.stock = stock;
+      }
 
-    vender(cantidad) {
-        this.stock -= cantidad;
-        return this.precio * cantidad;
-    }
-}
+      vender(cantidad) {
+          this.stock -= cantidad;
+          return this.precio * cantidad;
+      }
+  }
 
-const productos = [
-    new Producto(1, "Aceite Belmont 1lt", 4000, 800),
-    new Producto(2, "Coca Cola 3lts", 3000, 500),
-    new Producto(3, "Lavalozas Quix 1lt", 2850, 700),
-    new Producto(4, "Leche Soprole Chocolate 1lt", 1200, 1200),
-    new Producto(5, "Galletas Oreo Chocolate", 850, 80),
-    new Producto(6, "Arroz Miraflores Granel", 1600, 980),
-    new Producto(7, "Papel Higiénico Suave 4 rollos", 2000, 450),
-    new Producto(8, "Manzanas Royal Gala (kg)", 3500, 600),
-    new Producto(9, "Jabón Dove 100g", 1200, 250),
-    new Producto(10, "Atún en lata 160g", 2500, 560),
-];
+  const productos = [
+      new Producto(1, "Aceite Belmont 1lt", 4000, 800),
+      new Producto(2, "Coca Cola 3lts", 3000, 500),
+      new Producto(3, "Lavalozas Quix 1lt", 2850, 700),
+      new Producto(4, "Leche Soprole Chocolate 1lt", 1200, 1200),
+      new Producto(5, "Galletas Oreo Chocolate", 850, 80),
+      new Producto(6, "Arroz Miraflores Granel", 1600, 980),
+      new Producto(7, "Papel Higiénico Suave 4 rollos", 2000, 450),
+      new Producto(8, "Manzanas Royal Gala (kg)", 3500, 600),
+      new Producto(9, "Jabón Dove 100g", 1200, 250),
+      new Producto(10, "Atún en lata 160g", 2500, 560),
+  ];
 
-function cargarProductos() {
-    productos.forEach(function(producto) {
-        const fila = document.createElement('tr');
-        fila.id = `producto${producto.id}`;
+  function cargarProductos() {
+      productos.forEach(function(producto) {
+          const fila = document.createElement('tr');
+          fila.id = `producto${producto.id}`;
 
-        const celdaNombre = document.createElement('td');
-        const celdaPrecio = document.createElement('td');
-        const celdaCantidad = document.createElement('td');
+          const celdaNombre = document.createElement('td');
+          const celdaPrecio = document.createElement('td');
+          const celdaCantidad = document.createElement('td');
 
-        celdaNombre.textContent = producto.nombre;
-        celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
-        celdaCantidad.textContent = producto.stock;
+          celdaNombre.textContent = producto.nombre;
+          celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
+          celdaCantidad.textContent = producto.stock;
 
-        fila.appendChild(celdaNombre);
-        fila.appendChild(celdaPrecio);
-        fila.appendChild(celdaCantidad);
+          fila.appendChild(celdaNombre);
+          fila.appendChild(celdaPrecio);
+          fila.appendChild(celdaCantidad);
 
-        tablaProductos.appendChild(fila);
-    });
-}
+          tablaProductos.appendChild(fila);
+      });
+  }
+
+  cargarProductos();  // Llama a la función después de definirla y antes de cerrar el evento DOMContentLoaded
+});
 
 
 
