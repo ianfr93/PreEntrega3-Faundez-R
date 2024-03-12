@@ -479,7 +479,24 @@ margin-left: 10px;
 	 background: #3b8e71;
 }
  
+.item-group-wrapper {
+  display: flex;
+  gap: 10px; /* Espacio entre los grupos */
+}
 
+.item-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+.item {
+  flex: 1;
+  max-width: 150px; /* Establece el ancho máximo de cada elemento */
+  text-align: center; /* Centra el texto dentro del elemento */
+  padding: 10px;
+  border: 1px solid #ccc; /* Añade un borde para separar visualmente los elementos */
+}
 
 
 @media screen and (min-width: 1400px) {
