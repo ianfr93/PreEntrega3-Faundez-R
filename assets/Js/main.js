@@ -222,14 +222,50 @@ function cargarProductos() {
     });
 }
 
-// Llama a la función para cargar productos al cargar la página
+// Llama a la función para cargar productos para categorias
 document.addEventListener('DOMContentLoaded', function () {
-    cargarProductos();
+  const categories = document.querySelectorAll('.category');
+  const itemGroups = document.querySelectorAll('.item-group');
+
+  categories.forEach(function (category) {
+      category.addEventListener('click', function () {
+          // Remueve la clase 'active' de todas las categorías
+          categories.forEach(function (c) {
+              c.classList.remove('active');
+          });
+
+          // Agrega la clase 'active' a la categoría seleccionada
+          category.classList.add('active');
+
+          // Filtra los productos según la categoría seleccionada
+          const selectedCategory = category.dataset.category;
+
+          itemGroups.forEach(function (group) {
+              if (group.id === selectedCategory || selectedCategory === 'todos') {
+                  group.style.display = 'block';
+              } else {
+                  group.style.display = 'none';
+              }
+          });
+      });
+  });
+
+  // Muestra inicialmente los productos de la categoría "Aceites"
+  const initialCategory = 'aceites';
+  categories.forEach(function (category) {
+      if (category.dataset.category === initialCategory) {
+          category.classList.add('active');
+      }
+  });
+
+  itemGroups.forEach(function (group) {
+      if (group.id === initialCategory) {
+          group.style.display = 'block';
+      } else {
+          group.style.display = 'none';
+      }
+  });
 });
-
-
-
-
 
 
 

@@ -48,91 +48,114 @@
         <button type="submit" class="btn btn-login align-self-center" id="buscar">buscar</button>
     </div>
 
+
+
+
     <div class="sellables-container">
         <div class="sellables">
             <div class="categories">
-                <a class="category active" href="#">Aceites</a>
-                <a class="category" href="#">Bebidas</a>
-                <a class="category" href="#">Limpieza y Hogar</a>
-                <a class="category" href="#">Lácteos y Bebidas</a>
-                <a class="category" href="#"> Snacks y Galletas</a>
-                <a class="category" href="#">Granos y Legumbres</a>
-                <a class="category" href="#">Limpieza y Hogar</a>
-                <a class="category" href="#">Frutas</a>
-                <a class="category" href="#">Treats</a>
-                <a class="category" href="#">Cuidado Personal</a>
-                <a class="category" href="#">Conservas y Enlatados</a>
-            </div>
          
+                <a class="category active" href="#" data-category="aceites">Aceites</a>
+                <a class="category" href="#" data-category="bebidas">Bebidas</a>
+                <a class="category" href="#" data-category="limpieza">Limpieza y Hogar</a>
+                <a class="category" href="#" data-category="lacteos">Lácteos y Bebidas</a>
+                <a class="category" href="#" data-category="snacks">Snacks y Galletas</a>
+                <a class="category" href="#" data-category="granos">Granos y Legumbres</a>
+                <a class="category" href="#" data-category="frutas">Frutas</a>
+                <a class="category" href="#" data-category="treats">Treats</a>
+                <a class="category" href="#" data-category="cuidado">Cuidado Personal</a>
+                <a class="category" href="#" data-category="conservas">Conservas y Enlatados</a>
+                
+            </div>
 
             <div class="item-group-wrapper">
-                <div class="item-group">
-                    <a href="#" class="item">Aceite Belmont 1lt</a>
-                    <a href="#" class="item">Coca Cola 3lts</a>
-                    <a href="#" class="item">Lavalozas Quix 1lt</a>
-                    <a href="#" class="item">Leche Soprole Chocolate 1lt</a>
-                    <a href="#" class="item">Galletas Oreo Chocolate</a>
-                    <a href="#" class="item">Arroz Miraflores Granel</a>
-                    <a href="#" class="item">Papel Higiénico Suave 4 rollos</a>
-                    <a href="#" class="item">Manzanas Royal Gala (kg)</a>
-                    <a href="#" class="item">Jabón Dove 100g</a>
-                    <a href="#" class="item">Atún en lata 160g</a>
-                  <a href="#" class="item">Bud Light</a>
-                </div>
-                
-              </div>
-            </div>
+
         
+                <div class="item-group" id="aceites">
+                    <a href="#" class="item" data-product-id="1">Aceite Belmont 1lt</a>
+                </div>
 
-            
+                <div class="item-group" id="bebidas">
+                    <a href="#" class="item" data-product-id="2">Coca Cola 3lts</a>
+                </div>
 
+                <div class="item-group" id="limpieza">
+                    <a href="#" class="item" data-product-id="3">Lavalozas Quix 1lt</a>
+                </div>
 
+                <div class="item-group" id="lacteos">
+                    <a href="#" class="item" data-product-id="4">Leche Soprole Chocolate 1lt</a>
+                </div>
 
+                <div class="item-group" id="snacks">
+                    <a href="#" class="item" data-product-id="5">Galletas Oreo Chocolate</a>
+                </div>
 
-   
+                <div class="item-group" id="granos">
+                    <a href="#" class="item" data-product-id="6">Arroz Miraflores Granel</a>
+                </div>
 
-            <div class="register-wrapper">
+                <div class="item-group" id="frutas">
+                    <a href="#" class="item" data-product-id="7">Papel Higiénico Suave 4 rollos</a>
+                </div>
 
-   <!-- Botones con iconos y separación -->
-   <div class="d-flex justify-content-between mb-4" style="margin-top: 10px;">
-    <button class="btn btn-primary" id="btnProductoPorGlosa">
-        <i class="fas fa-shopping-cart"></i> Producto por Glosa
-    </button>
+                <div class="item-group" id="treats">
+                    <a href="#" class="item" data-product-id="8">Manzanas Royal Gala (kg)</a>
+                </div>
 
-    <div class="mx-2"></div> <!-- Espacio entre botones -->
+                <div class="item-group" id="cuidado">
+                    <a href="#" class="item" data-product-id="9">Jabón Dove 100g</a>
+                </div>
 
-    <button class="btn btn-danger" id="btnBorrarVenta">
-        <i class="fas fa-trash-alt"></i> Borrar Venta
-    </button>
-</div>
-
-                <div class="register">
-                    <div class="products">
-                        <div class="product-bar selected">
-                            <span>Cookies</span>
-                            <span>$5.00</span>
-                        </div>
-
-                        <div class="product-bar">
-                            <span>Cookies</span>
-                            <span>$5.00</span>
-                        </div>
-
-                        <div class="product-bar">
-                            <span>Cookies</span>
-                            <span>$5.00</span>
-                        </div>
-                    </div>
-
-                    <div class="pay-button">
-                        <a href="#">Pay $50.00</a>
-                    </div>
+                <div class="item-group" id="conservas">
+                    <a href="#" class="item" data-product-id="10">Atún en lata 160g</a>
                 </div>
             </div>
         </div>
 
 
 
+        <div class="register-wrapper">
+
+            <!-- Botones con iconos y separación -->
+            <div class="d-flex justify-content-between mb-4" style="margin-top: 10px;">
+                <button class="btn btn-primary" id="btnProductoPorGlosa">
+                    <i class="fas fa-shopping-cart"></i> Producto por Glosa
+                </button>
+
+                <div class="mx-2"></div> <!-- Espacio entre botones -->
+
+                <button class="btn btn-danger" id="btnBorrarVenta">
+                    <i class="fas fa-trash-alt"></i> Borrar Venta
+                </button>
+            </div>
+
+            <div class="register">
+                <div class="products">
+                    <div class="product-bar selected">
+                        <span>Cookies</span>
+                        <span>$5.00</span>
+                    </div>
+
+                    <div class="product-bar">
+                        <span>Cookies</span>
+                        <span>$5.00</span>
+                    </div>
+
+                    <div class="product-bar">
+                        <span>Cookies</span>
+                        <span>$5.00</span>
+                    </div>
+                </div>
+
+                <div class="pay-button">
+                    <a href="#">Pay $50.00</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
 
 
 
@@ -146,24 +169,24 @@
 
 
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-            integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
-        </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
+    </script>
 
-        <!-- main.js -->
-        <script src="../assets/Js/main.js"></script>
+    <!-- main.js -->
+    <script src="../assets/Js/main.js"></script>
 
-        <!-- Bootstrap Validator -->
-        <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
-        </script>
+    <!-- Bootstrap Validator -->
+    <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
+    </script>
 
 
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

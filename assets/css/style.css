@@ -487,18 +487,21 @@ margin-left: 10px;
 .item-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espacio entre los elementos */
+  gap: 30px; /* Espacio entre los elementos */
+ 
 }
 
 .item {
   flex: 1;
-  max-width: 200px; /* Establece el ancho máximo de cada elemento */
-  height: 200px;
+  max-width: auto; /* Establece el ancho máximo de cada elemento */
+  height: 250px;
   text-align: center; /* Centra el texto dentro del elemento */
   padding: 10px;
   border: 1px solid #ccc; /* Añade un borde para separar visualmente los elementos */
 }
-
+.sellables-container{
+  max-width: 100%;
+}
 
 @media screen and (min-width: 1400px) {
   .register-login .bg-image-container {
