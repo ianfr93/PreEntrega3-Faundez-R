@@ -27,123 +27,52 @@
 
 <body>
    
-    <div class="container-2">
-      
-        <div class="row mb-3">
-        
-            <div class="col-12">
-            
-               
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidebar" style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+                    <a href="./dashboard.html" style="margin-top: 15px;">
+                        <img src="../assets/img/logo/logo-blanco.png" alt="Logo de tu empresa" style="width: 130px;">
+                    </a>
 
-                <!-- Rectángulo azul con ícono de cajero y título -->
-                <div class="rectangulo-BG bg-primary text-white p-4 rounded">
-                    <!-- Ícono de cajero -->
-                    <i class="fas fa-cash-register fa-3x d-block mb-3"></i>
+                    <div class="user" style="display: flex; align-items: center;">
+                        <img src="../assets/img/iconos/Status=None, Size=24px, Presence=None.png"
+                            alt="Logo de tu empresa" style="width: 45px; margin-right: 20px;">
+                        <div class="user-info">
+                            <span class='user-nombre' style="margin-right: 50px; margin-left: 2px;">Ian Faúndez
+                                R.</span>
+                            <br>
+                            <a class="perfil-link" href="./Ver-mi perfil.html">Ver mi perfil </a>
 
-                    <!-- Título -->
-                    <h2 class="h4">Cajas disponibles</h2>
-                </div>
-
-                <img src="../assets/img/iconos/warning-1.gif" alt="Icono" class="img-fluid mx-auto d-block"
-                    style="max-width: 100px; max-height: 100px; margin-top: 20px;">
-                <h2 style="color: #2b5c6f; font-size: 20px; font-weight: medium; margin-top: 20px;">"Hemos notado que
-                    aún no has realizado
-                    la apertura de caja necesaria para acceder al POS. Por favor, realiza la apertura antes de
-                    continuar."</h2>
-
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectEmpresa" class="custom-select-label">Empresa:</label>
-                        <select id="selectEmpresa" class="form-select">
-                           
-                            <option>Seleccione</option>
-                            <option>Empresa-Las condes</option>
-                            <option>Empresa-Huechuraba</option>
-                            <option>Empresa-Recoleta</option>
-                            <option>Empresa-Maipu</option>
-                        </select>
-            
+                        </div>
                     </div>
+
+
+
+                    <nav class="menu-nav">
+                        <ul>
+                            <li class="menu-titles">principal</li>
+                            <li class="menu-items"><a href="./dashboard.html"><i
+                                        class='fas fa-barcode  menu-nav--icon fa-fw'></i><span>POS</span></a></li>
+                            <li class="menu-items"><a href="./ventas-del-dia.html"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Ventas del
+                                        día</span></a></li>
+                            <li class="menu-items"><a href="./Ver-stock.html"><i class='fas fa-box  menu-nav--icon fa-fw'></i><span>Ver
+                                        Stock</span></a></li>
+                            <li class="menu-items"><a href="./cerrar-caja.html"><i
+                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Cerrar
+                                        Caja</span></a></li>
+                            <li class="menu-titles">secundario</li>
+                            <li class="menu-items"><a href="#"><i class='fa fa-inbox  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Inbox</span></a></li>
+                            <li class="menu-items"><a href="#"><i
+                                        class='fa fa-file-text-o  menu-nav--icon fa-fw'></i><span
+                                        class="menu-items">Forms</span></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectCaja" class="custom-select-label">Caja:</label>
-                        <select id="selectCaja" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Caja-1</option>
-                            <option>Caja-2</option>
-                            <option>Caja-3</option>
-                            <option>Caja-4</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectImprimir" class="custom-select-label">¿Cómo desea imprimir?:</label>
-                        <select id="selectImprimir" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Terminal de pago Smart</option>
-                            <option>PDF</option>
-                            <option>Redelcom POS</option>
-                            <option>Smartphone</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="second-line">
-                    <div class="custom-select-container">
-                        <label for="selectDocumento" class="custom-select-label">Tipo de Documento:</label>
-                        <select id="selectDocumento" class="form-select">
-                            <option>Seleccione</option>
-                            <option>Factura</option>
-                            <option>Recibo</option>
-                            <option>Informe</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
 
-        </div>
-
-        <div class="col-md-12">
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="monto" style="margin-bottom: 10px; display: block;color: #2b5c6f; font-weight: 600;">Monto en dinero:</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span> <!-- Signo de peso -->
-                        <input type="number" class="form-control" id="monto" step="1" value="0">
-                    </div>
-               
-                </div>
-            </div>
-        </div>
-
-
-        <div class="botones-caja">
-            <div class="row mb-8">
-                <div class="col text-end">
-                    <button type="button" class="btn btn-secondary">Salir</button>
-                    <button type="button" id="acceso" class="btn btn-primary" onclick="guardarYRedirigir()">Guardar</button>
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

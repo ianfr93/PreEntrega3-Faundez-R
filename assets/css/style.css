@@ -492,6 +492,77 @@ a.menu-toggle {
 
 #success_message{ display: none;}
 
+
+.products {
+  padding: 20px;
+}
+
+/* Estilos de las tarjetas */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-details h4 {
+  margin-top: 10px;
+}
+
+.product-price {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #28a745; /* Verde */
+}
+
+.product-links a {
+  color: #007bff; /* Azul */
+  margin-right: 10px;
+}
+
+/* Badge */
+.badge {
+  background-color: #007bff; /* Azul */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+}
+
+/* Botón de añadir al carrito */
+.product-links button {
+  background-color: #007bff; /* Azul */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-links button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+
+
+
+
+
 @media screen and (min-width: 1400px) {
   .register-login .bg-image-container {
     width: 50%; 
@@ -581,118 +652,6 @@ a.menu-toggle {
 
 }
 
-.wrapper {
-  width: 1140px;
-}
-.row {
-  display: flex;
-  justify-content: space-evenly;
-}
-.row .card {
-  width: 250px;
-  height: 300px;
-  border: 1px solid black;
-  box-shadow: 0 5px 10px 1px;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: 0.2s linear;
-  background-color: white;
-}
-.row .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 10px 1px;
-}
-.row .card .image {
-  overflow: hidden;
-  height: 150px;
-  background: url("https://cdn.vox-cdn.com/thumbor/5rxhA5vuH-q2mpq1_ixG__-5kws=/94x0:610x344/1200x800/filters:focal(94x0:610x344)/cdn.vox-cdn.com/assets/755523/netflix-logo-705px.png");
-  background-position: center;
-  background-size: cover;
-}
-.product {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px; 
-}
-.product .product-name {
-  padding-left: 10px;
-  font-weight: bold;
-}
-.product .product-author {
-  padding-right: 10px;
-  font-size: 0.8rem;
-  font-style: italic;
-  color: grey;
-  cursor: pointer;
-}
-.product .product-author:hover {
-  text-decoration: underline;
-}
-.card .product-rating {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 20px;
-}
-.card .product-rating i:nth-child(1) {
-  padding-left: 10px;
-}
-.card .product-rating i:nth-child(-n+4) {
-  color: red;
-}
-.card .description {
- 
-}
-.card .description p {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 5px 10px 0 10px;
-  font-size: 0.8rem;
-  height: 50px;
-}
-.card .price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-}
-.card .price div .before-price {
-  margin-left: 10px;
-  padding: 5px 10px;
-  font-weight: bold;
-  text-decoration: line-through;
-  background-color: black;
-  color: #ff2323;
-  border-radius: 5px;
-}
-.card .price div .now-price {
-  margin-left: 10px;
-  padding: 5px 10px;
-  font-weight: bold;
-  background-color: red;
-  color: white;
-  border-radius: 5px;
-}
-.card .price button {
-  margin-right: 10px;
-  padding: 5px 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  box-shadow: 0 0 2px 1px black;
-  transition: 0.25s;
-}
-.card .price button:hover {
-  box-shadow: 0 0 10px 1px black;
-}
-@media only screen and (max-width: 900px) {
-  .row {
-    flex-wrap: wrap;
-  }
-}
 
 @media screen and (max-width: 480px) {
   .form-group {
