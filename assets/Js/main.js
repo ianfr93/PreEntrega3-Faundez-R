@@ -146,81 +146,64 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Función para mostrar el perfil del usuario en pantalla
+function mostrarPerfil(usuario) {
+  document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
+  document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
+  document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
+  document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
+}
 
+// Por ejemplo, para mostrar el perfil del primer usuario en la lista
+mostrarPerfil(usuarios[0]);
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Definir una variable para el usuario actual (podría ser el primer usuario en este caso)
-  let usuarioActual = usuarios[0];
-
-  function mostrarPerfilUsuario(usuario) {
-    // Establecer valores en los campos del formulario
-    document.getElementById("first_name").value = usuario.perfil.nombre;
-    document.getElementById("last_name").value = usuario.perfil.rut;
-    document.getElementById("email").value = usuario.perfil.correo;
-    document.getElementById("phone").value = usuario.perfil.direccion;
-
-    // Mostrar información en el div del perfil del usuario
-    document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
-    document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
-    document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
-    document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
-
-    console.log(`Información del perfil para ${usuario.usuario}:`);
-    console.log(`Nombre: ${usuario.perfil.nombre}`);
-    console.log(`Rut: ${usuario.perfil.rut}`);
-    console.log(`Correo: ${usuario.perfil.correo}`);
-    console.log(`Dirección: ${usuario.perfil.direccion}`);
-    console.log("----------------------------------");
-  }
-
-  // Llamada a la función mostrarPerfilUsuario con los datos del usuario actual
-  mostrarPerfilUsuario(usuarioActual);
-
-  // Configuración del validador de Bootstrap
-  const contactForm = document.getElementById('contact_form');
-  const validator = new window.BV.BootstrapValidator(contactForm, {
-    // ... (Configuración del validador)
-  });
-
-  // Manejo del evento de éxito del formulario
-  contactForm.addEventListener('success.form.bv', function (e) {
-    // Evitar la presentación del formulario por defecto
-    e.preventDefault();
-
-    // Mostrar mensaje de éxito
-    document.getElementById('success_message').style.display = 'block';
-
-    // Reiniciar el formulario
-    validator.resetForm();
-  });
-
-  // Manejo del clic en el botón de envío
-  document.getElementById('sendButton').addEventListener('click', function () {
-    // Disparar la validación del formulario
-    validator.validate();
-
-    // Verificar si el formulario es válido antes de enviar
-    if (validator.isValid()) {
-      // Realizar acciones adicionales o enviar el formulario
-      // Por ahora, solo registraremos un mensaje en la consola
-      console.log('Form is valid. Submitting...');
-
-      // Agregar aquí la lógica para guardar los cambios o enviar el formulario
-    } else {
-      // Manejar formulario no válido
-      // Puedes mostrar mensajes de error o cambiar el estilo aquí
-      alert('Form contains validation errors. Please check and correct them.');
+  // Referencia al usuario actual
+  const usuarioActual = {
+    perfil: {
+        nombre: "Nombre de ejemplo",
+        rut: "Rut de ejemplo",
+        correo: "correo@example.com",
+        direccion: "Dirección de ejemplo"
     }
-  });
+};
 
-  // Evento para gestionar cambios en el formulario si es necesario
-  document.querySelectorAll('#contact_form input').forEach(function (input) {
-    input.addEventListener('input', function () {
-      // Puedes agregar aquí la lógica para gestionar los cambios si es necesario
-      // gestionarCambios();
-    });
+function mostrarPerfilUsuario(usuario) {
+  document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
+  document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
+  document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
+  document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
+}
+
+
+  // Manejo del envío del formulario
+  document.getElementById("sendButton").addEventListener("click", function (event) {
+      // Validador y lógica de validación aquí (asegúrate de tener la referencia al validador)
+
+      // Verificar si los valores realmente han cambiado antes de actualizar el objeto usuarioActual
+      if (
+          usuarioActual.perfil.nombre !== document.getElementById("first_name").value ||
+          usuarioActual.perfil.rut !== document.getElementById("last_name").value ||
+          usuarioActual.perfil.correo !== document.getElementById("email").value ||
+          usuarioActual.perfil.direccion !== document.getElementById("phone").value
+      ) {
+          // Actualizar el objeto de usuario con los nuevos datos del formulario
+          usuarioActual.perfil.nombre = document.getElementById("first_name").value;
+          usuarioActual.perfil.rut = document.getElementById("last_name").value;
+          usuarioActual.perfil.correo = document.getElementById("email").value;
+          usuarioActual.perfil.direccion = document.getElementById("phone").value;
+
+          // Mostrar la información actualizada en el perfil del usuario
+          mostrarPerfilUsuario(usuarioActual);
+
+          // Agregar aquí la lógica para guardar los cambios o enviar el formulario
+          console.log("Form is valid. Submitting...");
+      } else {
+          console.log("Form values have not changed.");
+      }
   });
 });
+
 
 
 
