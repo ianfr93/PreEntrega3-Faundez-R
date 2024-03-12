@@ -26,14 +26,14 @@
 </head>
 
 <body>
-   
+
     <div class="container-2">
-      
+
         <div class="row mb-3">
-        
+
             <div class="col-12">
-            
-               
+
+
 
                 <!-- Rectángulo azul con ícono de cajero y título -->
                 <div class="rectangulo-BG bg-primary text-white p-4 rounded">
@@ -60,14 +60,14 @@
                     <div class="custom-select-container">
                         <label for="selectEmpresa" class="custom-select-label">Empresa:</label>
                         <select id="selectEmpresa" class="form-select">
-                           
+
                             <option>Seleccione</option>
                             <option>Empresa-Las condes</option>
                             <option>Empresa-Huechuraba</option>
                             <option>Empresa-Recoleta</option>
                             <option>Empresa-Maipu</option>
                         </select>
-            
+
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-6">
                 <div class="second-line">
                     <div class="custom-select-container">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-6">
                 <div class="second-line">
                     <div class="custom-select-container">
@@ -114,19 +114,21 @@
                     </div>
                 </div>
             </div>
-            
+
 
         </div>
 
         <div class="col-md-12">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <label for="monto" style="margin-bottom: 10px; display: block;color: #2b5c6f; font-weight: 600;">Monto en dinero:</label>
+                    <label for="monto"
+                        style="margin-bottom: 10px; display: block;color: #2b5c6f; font-weight: 600;">Monto en
+                        dinero:</label>
                     <div class="input-group">
                         <span class="input-group-text">$</span> <!-- Signo de peso -->
                         <input type="number" class="form-control" id="monto" step="1" value="0">
                     </div>
-               
+
                 </div>
             </div>
         </div>
@@ -136,7 +138,8 @@
             <div class="row mb-8">
                 <div class="col text-end">
                     <button type="button" class="btn btn-secondary">Salir</button>
-                    <button type="button" id="acceso" class="btn btn-primary" onclick="guardarYRedirigir()">Guardar</button>
+                    <button type="button" id="acceso" class="btn btn-primary"
+                        onclick="guardarYRedirigir()">Guardar</button>
 
 
 
@@ -151,11 +154,16 @@
 
 
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
+    </script>
+
     <!-- Enlace a main.js -->
     <script src="../assets/Js/main.js"></script>
-
-    <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous"></script>
+    <!-- Bootstrap Validator -->
+    <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
