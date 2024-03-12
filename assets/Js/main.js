@@ -174,8 +174,32 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Obtén el elemento de la tabla
-const tabla = document.querySelector('.table tbody');
+class Producto {
+  constructor(nombre, precio, stock) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.stock = stock;
+  }
+
+  vender(cantidad) {
+    this.stock -= cantidad;
+    return this.precio * cantidad;
+  }
+}
+
+const productos = [
+  new Producto("Aceite Belmont 1lt", 4000, 800),
+  new Producto("Coca Cola 3lts", 3000, 500),
+  new Producto("Lavalozas Quix 1lt", 2850, 700),
+  new Producto("Leche Soprole Chocolate 1lt", 1200, 1200),
+  new Producto("Galletas Oreo Chocolate", 850, 80),
+  new Producto("Arroz Miraflores Granel", 1600, 980),
+  new Producto("Papel Higiénico Suave 4 rollos", 2000, 450),
+  new Producto("Manzanas Royal Gala (kg)", 3500, 600),
+  new Producto("Jabón Dove 100g", 1200, 250),
+  new Producto("Atún en lata 160g", 2500, 560),
+];
+
 
 // Función para cargar productos
 function cargarProductos() {
@@ -244,32 +268,11 @@ function cargarProductos() {
     }
   } while (error === 1);
 
-  // Añade el producto a la tabla
-  const fila = document.createElement('tr');
-  const celdaNombre = document.createElement('td');
-  const celdaPrecio = document.createElement('td');
-  const celdaCantidad = document.createElement('td');
-
-  celdaNombre.textContent = productoSeleccionado.nombre;
-  celdaPrecio.textContent = `$${productoSeleccionado.precio.toFixed(2)}`;
-  celdaCantidad.textContent = productoSeleccionado.stock;
-
-  fila.appendChild(celdaNombre);
-  fila.appendChild(celdaPrecio);
-  fila.appendChild(celdaCantidad);
-
-  tabla.appendChild(fila);
-
   return {
     producto: productoSeleccionado.nombre,
     precio: productoSeleccionado.precio
   };
 }
-
-// Llama a la función para cargar productos al cargar la página
-document.addEventListener('DOMContentLoaded', function () {
-  cargarProductos();
-});
 
 
 
