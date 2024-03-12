@@ -24,469 +24,126 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="sidebar" style="display: flex; flex-direction: column; align-items: center; height: 100%;">
-                    <a href="./dashboard.html" style="margin-top: 15px;">
-                        <img src="../assets/img/logo/logo-blanco.png" alt="Logo de tu empresa" style="width: 130px;">
-                    </a>
-
-                    <div class="user" style="display: flex; align-items: center;">
-                        <img src="../assets/img/iconos/Status=None, Size=24px, Presence=None.png"
-                            alt="Logo de tu empresa" style="width: 45px; margin-right: 20px;">
-                        <div class="user-info">
-                            <span class='user-nombre' style="margin-right: 50px; margin-left: 2px;">Ian Faúndez
-                                R.</span>
-                            <br>
-                            <a class="perfil-link" href="./Ver-mi perfil.html">Ver mi perfil </a>
-
-                        </div>
-                    </div>
 
 
+    <nav>
+        <ul>
+            <li><img src="ruta_del_logo/logo.png" alt="Logo de la Marca"></li>
+            <li><a href="#"><i class="fas fa-barcode fa-sm"></i> POS</a></li>
+            <li><a href="#"><i class="fas fa-box fa-sm"></i> Ver Stock</a></li>
+            <li><a href="#"><i class="fas fa-chart-line fa-sm"></i> Ventas del día</a></li>
+            <li><a href="#"><i class="fas fa-money fa-sm"></i> Cerrar Caja</a></li>
+            <li><a href="#"><i class="fas fa-user fa-sm"></i> Ver Perfil de Usuario</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt fa-sm"></i> Cerrar Sesión</a></li>
+          </ul>
+      </nav>
 
-                    <nav class="menu-nav">
-                        <ul>
-                            <li class="menu-titles">principal</li>
-                            <li class="menu-items"><a href="./dashboard.html"><i
-                                        class='fas fa-barcode  menu-nav--icon fa-fw'></i><span>POS</span></a></li>
-                            <li class="menu-items"><a href="./ventas-del-dia.html"><i
-                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Ventas del
-                                        día</span></a></li>
-                            <li class="menu-items"><a href="./Ver-stock.html"><i
-                                        class='fas fa-box  menu-nav--icon fa-fw'></i><span>Ver
-                                        Stock</span></a></li>
-                            <li class="menu-items"><a href="./cerrar-caja.html"><i
-                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Cerrar
-                                        Caja</span></a></li>
-                            <li class="menu-titles">secundario</li>
-                            <li class="menu-items"><a href="#"><i class='fa fa-inbox  menu-nav--icon fa-fw'></i><span
-                                        class="menu-items">Inbox</span></a></li>
-                            <li class="menu-items"><a href="#"><i
-                                        class='fa fa-file-text-o  menu-nav--icon fa-fw'></i><span
-                                        class="menu-items">Forms</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
+      <div class="search">
+        <input type="Search" placeholder="Search..." />
+      </div>
+
+      <div class="sellables-container">
+        <div class="sellables">
+          <div class="categories">
+            <a class="category active" href="#">Alcohol</a>
+            <a class="category" href="#">Attractions</a>
+            <a class="category" href="#">Burgers</a>
+            <a class="category" href="#">Drinks</a>
+            <a class="category" href="#">Food</a>
+            <a class="category" href="#">Pizza</a>
+            <a class="category" href="#">Rentals</a>
+            <a class="category" href="#">Salads</a>
+            <a class="category" href="#">Treats</a>
+          </div>
+      
+          <div class="item-group-wrapper">
+            <div class="item-group">
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
             </div>
-
-
-            <!-- Resto del contenido principal aquí -->
-
-            <div class="col-10 md-10">
-                <div class="barra d-flex align-items-center">
-
-                    <a class='menu-toggle'><i class="fa fa-bars menu-nav--icon"></i></a>
-
-                    <!-- Navbar horizontal -->
-
-
-                    <!-- Navbar horizontal centrado -->
-                    <div class="d-flex justify-content-center ml-auto">
-                        <nav class="navbar navbar-expand-md navbar-light bg-light">
-                            <a class='menu-toggle navbar-toggler' data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav"><i class="fa fa-bars menu-nav--icon"></i></a>
-
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav ml-auto">
-                                    <!-- Tus otros elementos del menú aquí -->
-                                    <li class="nav-item">
-                                        <a class="nav-link btn btn-primary" href="../index.html"><i
-                                                class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                    </div>
-
-                </div>
-                <!-- Resto de tu contenido -->
-
-                <div class="main-container">
-                    <div class="bg-white">
-                        <!-- Barra de búsqueda -->
-                        <div class="search-bar d-flex">
-                            <input type="text" class="form-control" placeholder="Buscar...">
-                            <button class="btn btn-primary">Buscar</button>
-                        </div>
-
-                        <div class="container">
-                            <div class="row">
-                                <!-- Categorías de productos -->
-                                <div class="col-md-4">
-                                    <div class="categories" style="margin-top: 30px;">
-                                        <div class="row text-center category-list">
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('alimentos')">Alimentos</button>
-                                            </div>
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('bebidas')">Bebidas</button>
-                                            </div>
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('aseo')">Aseo y Limpieza</button>
-                                            </div>
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('categoria4')">Categoría 4</button>
-                                            </div>
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('categoria5')">Categoría 5</button>
-                                            </div>
-                                            <div class="col-4 mb-4">
-                                                <button class="btn btn-primary category mb-2"
-                                                    onclick="filtrarProductos('categoria6')">Categoría 6</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Secciones -->
-                                <div class="col-md-8">
-                                    <div class="sections-container" style="margin-top: 30px;">
-                                        <div class="row text-center">
-                                            <div class="col-md-4">
-                                                <button class="btn btn-primary section-btn" onclick="ingresarDinero()">
-                                                    <i class="fas fa-money-bill-wave"></i> Ingresar Dinero
-                                                </button>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <button class="btn btn-primary section-btn" onclick="sacarDinero()">
-                                                    <i class="fas fa-money-bill"></i> Sacar Dinero
-                                                </button>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <button class="btn btn-primary section-btn" onclick="cerrarCaja()">
-                                                    <i class="fas fa-lock"></i> Cerrar Caja
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tarjetas de productos -->
-                        <div class="products">
-
-                            <div class="row">
-                                <!-- Primera fila -->
-
-
-                                <div class="row">
-
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <!-- Tarjeta 7 -->
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Fin de la segunda fila -->
-
-
-
-                                <!-- Segunda fila -->
-                                <div class="row">
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Fin de la segunda fila -->
-
-                                <!-- Segunda fila -->
-                                <div class="row">
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Fin de la segunda fila -->
-
-                                <!-- Segunda fila -->
-                                <div class="row">
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mb-4">
-                                        <div class="product-card" data-aos="flip-up" data-aos-duration="500">
-                                            <div class="badge">2%</div>
-                                            <div class="product-tumb">
-                                                <img src="../assets/images/Nuestra-carta/img-9.jpg" alt="plato-9">
-                                            </div>
-                                            <div class="product-details">
-                                                <h4><a href="">plato-9</a></h4>
-                                                <div class="product-bottom-details">
-                                                    <div class="product-price"><small>$96.00</small>$230.99</div>
-                                                    <div class="product-links">
-                                                        <a href=""><i class="fa fa-heart"></i></a>
-                                                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+            <div class="item-group">
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+              <a href="#" class="item">Bud Light</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="register-wrapper">
+          <div class="customer">
+            <input type="text" placeholder="John Doe" />
+          </div>
+      
+          <div class="register">
+            <div class="products">
+              <div class="product-bar selected">
+                <span>Cookies</span>
+                <span>$5.00</span>
+              </div>
+      
+              <div class="product-bar">
+                <span>Cookies</span>
+                <span>$5.00</span>
+              </div>
+      
+              <div class="product-bar">
+                <span>Cookies</span>
+                <span>$5.00</span>
+              </div>
+            </div>
+      
+            <div class="pay-button">
+              <a href="#">Pay $50.00</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
 
-                                    <!-- Contenedor del carrito -->
-
-                                    <div class="col-md-3 mb-4">
-                                        <div class="cart-container">
-                                            <div class="product-item">
-                                                <div class="product-info">
-                                                    <img src="ruta_de_imagen1.jpg" alt="Producto 1">
-                                                    <div>
-                                                        <h4>Nombre del Producto 1</h4>
-                                                        <p>Precio: $50.00</p>
-                                                    </div>
-                                                </div>
-                                                <div class="product-actions">
-                                                    <div class="quantity">Cantidad: 2</div>
-                                                    <div class="action-buttons">
-                                                        <button onclick="increaseQuantity()">+</button>
-                                                        <button onclick="decreaseQuantity()">-</button>
-                                                        <button onclick="removeProduct()">Eliminar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
 
 
 
-                                </div>
-                                <!-- Fin de la segunda fila -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 
 
-                <!-- jQuery -->
-                <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-                    integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY"
-                    crossorigin="anonymous"></script>
 
-                <!-- main.js -->
-                <script src="../assets/Js/main.js"></script>
-
-                <!-- Bootstrap Validator -->
-                <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
-                </script>
+    
 
 
+                    <!-- jQuery -->
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+                        integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY"
+                        crossorigin="anonymous"></script>
 
-                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-                <script>
-                    AOS.init();
-                </script>
+                    <!-- main.js -->
+                    <script src="../assets/Js/main.js"></script>
+
+                    <!-- Bootstrap Validator -->
+                    <script
+                        src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
+                    </script>
+
+
+
+                    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                    <script>
+                        AOS.init();
+                    </script>
 
 </body>
 
