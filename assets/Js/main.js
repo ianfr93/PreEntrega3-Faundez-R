@@ -143,7 +143,7 @@ function guardarYRedirigir() {
 
 
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Definir una variable para el usuario actual (podría ser el primer usuario en este caso)
   let usuarioActual = usuarios[0];
 
@@ -187,7 +187,7 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   $('#contact_form').bootstrapValidator({
       feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
@@ -284,7 +284,7 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   $('.menu-toggle').click(function () {
     $('.contenedor').toggleClass('ancho-min');
@@ -337,7 +337,7 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   $('.menu-toggle').click(function () {
     $('.contenedor').toggleClass('ancho-min');
