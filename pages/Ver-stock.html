@@ -27,54 +27,47 @@
 
 <body>
    
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="sidebar" style="display: flex; flex-direction: column; align-items: center; height: 100%;">
-                    <a href="./dashboard.html" style="margin-top: 15px;">
-                        <img src="../assets/img/logo/logo-blanco.png" alt="Logo de tu empresa" style="width: 130px;">
-                    </a>
+    <nav>
 
-                    <div class="user" style="display: flex; align-items: center;">
-                        <img src="../assets/img/iconos/Status=None, Size=24px, Presence=None.png"
-                            alt="Logo de tu empresa" style="width: 45px; margin-right: 20px;">
-                        <div class="user-info">
-                            <span class='user-nombre' style="margin-right: 50px; margin-left: 2px;">Ian Faúndez
-                                R.</span>
-                            <br>
-                            <a class="perfil-link" href="./Ver-mi perfil.html">Ver mi perfil </a>
+        <ul>
+            <li><img src="../assets/img/logo/logo-blanco.png" alt="Logo de la Marca"
+                    style="width: 150px; height: auto;"></li>
+            <li><a href="./dashboard.html"><i class="fas fa-barcode fa-sm"></i> POS</a></li>
+            <li><a href="./Ver-stock.html"><i class="fas fa-box fa-sm"></i> Ver Stock</a></li>
+            <li><a href="./ventas-del-dia.html"><i class="fas fa-chart-line fa-sm"></i> Ventas del día</a></li>
+            <li><a href="./cerrar-caja.html"><img src="../assets/img/iconos/caja-de-seguridad.png" style="width: 20px;"
+                        alt="Cerrar Caja" class="imagen-pequena"> Cerrar Caja</a></li>
+            <li><a href="./Ver-mi perfil.html"><i class="fas fa-user fa-sm"></i> Ver Perfil de Usuario</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt fa-sm" style="margin-right: 10px;"></i> Cerrar
+                    Sesión</a></li>
+        </ul>
 
-                        </div>
-                    </div>
+    </nav>
 
-
-
-                    <nav class="menu-nav">
-                        <ul>
-                            <li class="menu-titles">principal</li>
-                            <li class="menu-items"><a href="./dashboard.html"><i
-                                        class='fas fa-barcode  menu-nav--icon fa-fw'></i><span>POS</span></a></li>
-                            <li class="menu-items"><a href="./ventas-del-dia.html"><i
-                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Ventas del
-                                        día</span></a></li>
-                            <li class="menu-items"><a href="./Ver-stock.html"><i class='fas fa-box  menu-nav--icon fa-fw'></i><span>Ver
-                                        Stock</span></a></li>
-                            <li class="menu-items"><a href="./cerrar-caja.html"><i
-                                        class='fas fa-cash-register  menu-nav--icon fa-fw'></i><span>Cerrar
-                                        Caja</span></a></li>
-                            <li class="menu-titles">secundario</li>
-                            <li class="menu-items"><a href="#"><i class='fa fa-inbox  menu-nav--icon fa-fw'></i><span
-                                        class="menu-items">Inbox</span></a></li>
-                            <li class="menu-items"><a href="#"><i
-                                        class='fa fa-file-text-o  menu-nav--icon fa-fw'></i><span
-                                        class="menu-items">Forms</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-
-
+    <div class="container mt-4">
+        <h2>Inventario de Productos</h2>
+      
+        <!-- Tabla con Bootstrap -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Fila de ejemplo, puedes repetir esto para cada producto -->
+            <tr>
+              <td>Producto 1</td>
+              <td>$19.99</td>
+              <td>50</td>
+            </tr>
+            <!-- Fin de las filas de ejemplo -->
+          </tbody>
+        </table>
+      
+      </div>
 
 
 

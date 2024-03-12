@@ -201,6 +201,79 @@ const productos = [
 ];
 
 
+// Función para cargar productos
+function cargarProductos() {
+  let error;
+  let productoSeleccionado;
+
+  do {
+    error = 0;
+    let producto = parseInt(prompt("Ingrese el código de producto que quiere llevar" + "\n" +
+      "1-Aceite Belmont 1lt" + "\n" +
+      "2-Coca Cola 3lts" + "\n" +
+      "3-Lavalozas Quix 1lt" + "\n" +
+      "4-Leche Soprole Chocolate 1lt" + "\n" +
+      "5-Galletas Oreo Chocolate" + "\n" +
+      "6-Arroz Miraflores Granel" + "\n" +
+      "7-Papel Higiénico Suave 4 rollos" + "\n" +
+      "8-Manzanas Royal Gala (kg)" + "\n" +
+      "9-Jabón Dove 100g" + "\n" +
+      "10-Atún en lata 160g"
+    ));
+
+    switch (producto) {
+      case 1:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[0];
+        break;
+      case 2:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[1];
+        break;
+      case 3:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[2];
+        break;
+      case 4:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[3];
+        break;
+      case 5:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[4];
+        break;
+      case 6:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[5];
+        break;
+      case 7:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[6];
+        break;
+      case 8:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[7];
+        break;
+      case 9:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[8];
+        break;
+      case 10:
+        alert('Tu producto se agregó de manera exitosa');
+        productoSeleccionado = productos[9];
+        break;
+      default:
+        alert('Opción incorrecta. Digite nuevamente para poder continuar con su compra');
+        error = 1;
+    }
+  } while (error === 1);
+
+  return {
+    producto: productoSeleccionado.nombre,
+    precio: productoSeleccionado.precio
+  };
+}
+
 
 
 
