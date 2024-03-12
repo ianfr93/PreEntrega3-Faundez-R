@@ -1,3 +1,4 @@
+
 let usuarios = [{
   usuario: "usuario1",
   contraseña: "contraseña1",
@@ -60,6 +61,8 @@ let usuarios = [{
 }
 ];
 
+
+
 let intentosRestantes = 5;
 
 // Función para autenticar al usuario
@@ -89,8 +92,8 @@ function autenticarUsuario(event) {
   }
 }
 
-// Agregar evento de clic al botón con id "acceso"
-document.getElementById("acceso").addEventListener("click", function (event) {
+
+document.addEventListener("DOMContentLoaded", function () {
   if (intentosRestantes > 5) {
     autenticarUsuario(event);
   }
@@ -138,23 +141,51 @@ function guardarYRedirigir() {
   }
 }
 
- // Función para mostrar el perfil del usuario
- function mostrarPerfilUsuario(usuario) {
-  // Establecer valores en los campos del formulario
-  $('#contact_form input[name="first_name"]').val(usuario.perfil.nombre);
-  $('#contact_form input[name="last_name"]').val(usuario.perfil.rut);
-  $('#contact_form input[name="email"]').val(usuario.perfil.correo);
-  $('#contact_form input[name="phone"]').val(usuario.perfil.direccion);
 
-  console.log(`Información del perfil para ${usuario.usuario}:`);
-  console.log(`Nombre: ${usuario.perfil.nombre}`);
-  console.log(`Rut: ${usuario.perfil.rut}`);
-  console.log(`Correo: ${usuario.perfil.correo}`);
-  console.log(`Dirección: ${usuario.perfil.direccion}`);
-  console.log("----------------------------------");
 
-  gestionarCambios();
-}
+$(document).ready(function () {
+  // Definir una variable para el usuario actual (podría ser el primer usuario en este caso)
+  let usuarioActual = usuarios[0];
+
+  function mostrarPerfilUsuario(usuario) {
+    // Establecer valores en los campos del formulario
+    $('#contact_form input[name="first_name"]').val(usuario.perfil.nombre);
+    $('#contact_form input[name="last_name"]').val(usuario.perfil.rut);
+    $('#contact_form input[name="email"]').val(usuario.perfil.correo);
+    $('#contact_form input[name="phone"]').val(usuario.perfil.direccion);
+
+    // Mostrar información en el div del perfil del usuario
+    $('#perfilUsuario #nombreUsuario').text(usuario.perfil.nombre);
+    $('#perfilUsuario #rutUsuario').text(usuario.perfil.rut);
+    $('#perfilUsuario #correoUsuario').text(usuario.perfil.correo);
+    $('#perfilUsuario #direccionUsuario').text(usuario.perfil.direccion);
+
+    console.log(`Información del perfil para ${usuario.usuario}:`);
+    console.log(`Nombre: ${usuario.perfil.nombre}`);
+    console.log(`Rut: ${usuario.perfil.rut}`);
+    console.log(`Correo: ${usuario.perfil.correo}`);
+    console.log(`Dirección: ${usuario.perfil.direccion}`);
+    console.log("----------------------------------");
+  }
+
+  // Llamada a la función mostrarPerfilUsuario con los datos del usuario actual
+  mostrarPerfilUsuario(usuarioActual);
+
+  // Evento para gestionar cambios en el formulario si es necesario
+  $('#contact_form input').on('input', function () {
+    // Llama a la función gestionarCambios si es necesario
+    // gestionarCambios();
+  });
+
+  // Evento para el botón de guardar
+  $('#sendButton').on('click', function () {
+    // Puedes agregar aquí la lógica para guardar los cambios si es necesario
+    console.log("Guardando cambios...");
+  });
+});
+
+
+
 
 $(document).ready(function () {
   $('#contact_form').bootstrapValidator({
@@ -244,6 +275,59 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+
+  $('.menu-toggle').click(function () {
+    $('.contenedor').toggleClass('ancho-min');
+
+    if (!window.matchMedia('(min-width: 1017px)').matches) {
+      /* Cambios cuando alcanzamos el min-width */
+      if (!$('.contenedor').hasClass("ancho-min")) {
+
+      } else {
+
+      }
+    }
+  });
+
+  $('.menu-boton').click(function () {
+    $('.menu-nav-seg').toggleClass('open-menu-nav-seg');
+    $('.menu-boton i').toggleClass('fa-caret-right');
+    $('.menu-boton i').toggleClass('fa-caret-down');
+  });
+
+  /*
+   * Necesitamos convertirlo en una función.
+   * Para aplicar los cambios tanto cuando el documento está listo como cuando cambiamos el tamaño del navegador.
+   */
+
+  function mediaSize() {
+    /* Establecer el matchMedia 992 + 250*/
+    if (window.matchMedia('(min-width: 1017px)').matches) {
+      /* Cambios cuando alcanzamos el min-width */
+      $('.contenedor').removeClass('ancho-min');
+
+    } else {
+      /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
+      $('.contenedor').addClass('ancho-min');
+
+    }
+  };
+
+  /* Llama a la función */
+  mediaSize();
+  /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
+  window.addEventListener('resize', mediaSize, false);
+});
 
 
 
