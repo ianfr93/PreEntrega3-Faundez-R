@@ -3,13 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Sistena POS WEB PUNTO DE VENTA PARA NEGOCIOS." />
+    <meta name="description" content="Sistema POS WEB PUNTO DE VENTA PARA NEGOCIOS." />
     <meta name="keywords" content="comida, Ventas, Articulos, Supermercado, Tienda, Categorias, Productos, Calcular" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Menu-flotante</title>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>ver-stock</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,25 +25,20 @@
 <body>
 
     <nav>
-
         <ul>
-            <li><img src="../assets/img/logo/logo-blanco.png" alt="Logo de la Marca"
-                    style="width: 150px; height: auto;"></li>
+            <li><img src="../assets/img/logo/logo-blanco.png" alt="Logo de la Marca" style="width: 150px; height: auto;"></li>
             <li><a href="./dashboard.html"><i class="fas fa-barcode fa-sm"></i> POS</a></li>
             <li><a href="./Ver-stock.html"><i class="fas fa-box fa-sm"></i> Ver Stock</a></li>
             <li><a href="./ventas-del-dia.html"><i class="fas fa-chart-line fa-sm"></i> Ventas del día</a></li>
-            <li><a href="./cerrar-caja.html"><img src="../assets/img/iconos/caja-de-seguridad.png" style="width: 20px;"
-                        alt="Cerrar Caja" class="imagen-pequena"> Cerrar Caja</a></li>
+            <li><a href="./cerrar-caja.html"><img src="../assets/img/iconos/caja-de-seguridad.png" style="width: 20px;" alt="Cerrar Caja" class="imagen-pequena"> Cerrar Caja</a></li>
             <li><a href="./Ver-mi perfil.html"><i class="fas fa-user fa-sm"></i> Ver Perfil de Usuario</a></li>
-            <li><a href="../index.html"><i class="fas fa-sign-out-alt fa-sm" style="margin-right: 10px;"></i> Cerrar
-                    Sesión</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt fa-sm" style="margin-right: 10px;"></i> Cerrar Sesión</a></li>
         </ul>
-
     </nav>
 
     <div class="container mt-4">
         <h2>Inventario de Productos</h2>
-
+    
         <!-- Tabla con Bootstrap -->
         <table class="table">
             <thead>
@@ -56,33 +48,31 @@
                     <th scope="col">Cantidad</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- Asigna un ID al tbody para que pueda ser seleccionado en JavaScript -->
+            <tbody id="tablaProductos">
                 <!-- Fila de ejemplo, puedes repetir esto para cada producto -->
                 <tr>
-
                 </tr>
                 <!-- Fin de las filas de ejemplo -->
             </tbody>
         </table>
-
     </div>
 
+    <!-- jQuery y Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
-
-
-
-    <!-- Enlace a main.js -->
-    <script src="../assets/Js/main.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+
+    <!-- Tu archivo main.js -->
+    <script src="../assets/Js/main.js"></script>
 
 </body>
 
