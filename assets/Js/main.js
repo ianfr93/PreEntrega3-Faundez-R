@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "Ian Faúndez Rubio",
         rut: "18408203-9",
         correo: "Ifaundez.a@hotmail.com",
-        direccion: "Emiliano Zapata 693"
-      }
+        direccion: "Emiliano Zapata 693",
+      },
     },
     {
       usuario: "usuario2",
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "juan fernandez calvo",
         rut: "13402203-9",
         correo: "juanito.c@hotmail.com",
-        direccion: "Santiago,centro"
-      }
+        direccion: "Santiago,centro",
+      },
     },
     {
       usuario: "usuario3",
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "marcelo rios",
         rut: "10708223-9",
         correo: "Chinorrios@hotmail.com",
-        direccion: "lo barnechea las casas 45"
-      }
+        direccion: "lo barnechea las casas 45",
+      },
     },
     {
       usuario: "usuario4",
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "gabriel prieto",
         rut: "11408203-9",
         correo: "Ifaundez.a@hotmail.com",
-        direccion: "Nuñoa 456"
-      }
+        direccion: "Nuñoa 456",
+      },
     },
     {
       usuario: "usuario5",
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "luis miguel",
         rut: "11402303-9",
         correo: "luismi.a@hotmail.com",
-        direccion: "coquimbo 345"
-      }
+        direccion: "coquimbo 345",
+      },
     },
     {
       usuario: "usuario6",
@@ -56,10 +56,35 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre: "nicolas massu",
         rut: "13408103-1",
         correo: "nicolas.massu@hotmail.com",
-        direccion: "la florida 233"
-      }
-    }
+        direccion: "la florida 233",
+      },
+    },
   ];
+
+  // Función para mostrar el perfil del usuario en pantalla
+  function mostrarPerfil(usuario) {
+    document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
+    document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
+    document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
+    document.getElementById("direccionUsuario").innerText =
+      usuario.perfil.direccion;
+
+  }
+
+  // Agrega el evento click al enlace "Ver mi perfil"
+const verPerfilLink = document.getElementById("verPerfil");
+if (verPerfilLink) {
+  verPerfilLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    // Obtén el índice del usuario desde la URL o de alguna otra manera que necesites
+    // En este ejemplo, se asume que solo hay un usuario y se utiliza el índice 0.
+    const index = 0; // Cambia esto según tus necesidades
+    mostrarPerfil(index);
+  });
+}
+
+
+
 
   let intentosRestantes = 5;
 
@@ -105,104 +130,67 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loginForm) {
     loginForm.addEventListener("submit", autenticarUsuario);
   }
+// Por ejemplo, para mostrar el perfil del primer usuario en la lista
+mostrarPerfil(usuarios[0]);
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const botonGuardar = document.getElementById("acceso");
 
   botonGuardar.addEventListener("click", function () {
-      guardarYRedirigir();
+    guardarYRedirigir();
   });
 
   function obtenerValorSelect(idSelect) {
-      const selectElement = document.getElementById(idSelect);
-      return selectElement.options[selectElement.selectedIndex].text;
+    const selectElement = document.getElementById(idSelect);
+    return selectElement.options[selectElement.selectedIndex].text;
   }
 
   function validarCampos() {
-      empresa = obtenerValorSelect('selectEmpresa');
-      caja = obtenerValorSelect('selectCaja');
-      imprimir = obtenerValorSelect('selectImprimir');
-      tipoDocumento = obtenerValorSelect('selectDocumento');
-      monto = parseFloat(document.getElementById('monto').value);
+    empresa = obtenerValorSelect('selectEmpresa');
+    caja = obtenerValorSelect('selectCaja');
+    imprimir = obtenerValorSelect('selectImprimir');
+    tipoDocumento = obtenerValorSelect('selectDocumento');
+    monto = parseFloat(document.getElementById('monto').value);
 
-      switch (true) {
-          case (empresa === 'Seleccione' || caja === 'Seleccione' || imprimir === 'Seleccione' || tipoDocumento === 'Seleccione'):
-              alert('Por favor, seleccione todas las opciones antes de continuar.');
-              return false;
-          case (monto <= 0 || isNaN(monto)):
-              alert('Ingrese un monto válido mayor que cero.');
-              return false;
-          default:
-              return true;
-      }
+    switch (true) {
+      case (empresa === 'Seleccione' || caja === 'Seleccione' || imprimir === 'Seleccione' || tipoDocumento === 'Seleccione'):
+        alert('Por favor, seleccione todas las opciones antes de continuar.');
+        return false;
+      case (monto <= 0 || isNaN(monto)):
+        alert('Ingrese un monto válido mayor que cero.');
+        return false;
+      default:
+        return true;
+    }
   }
 
   function guardarYRedirigir() {
-      if (validarCampos()) {
-          alert('Datos válidos. Guardando y redirigiendo desde la pantalla de caja...');
-          window.location.href = './dashboard.html';
-      }
-  }
-});
-
-// Función para mostrar el perfil del usuario en pantalla
-function mostrarPerfil(usuario) {
-  document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
-  document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
-  document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
-  document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
-}
-
-// Por ejemplo, para mostrar el perfil del primer usuario en la lista
-mostrarPerfil(usuarios[0]);
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Referencia al usuario actual
-  const usuarioActual = {
-    perfil: {
-        nombre: "Nombre de ejemplo",
-        rut: "Rut de ejemplo",
-        correo: "correo@example.com",
-        direccion: "Dirección de ejemplo"
+    if (validarCampos()) {
+      alert('Datos válidos. Guardando y redirigiendo desde la pantalla de caja...');
+      window.location.href = './dashboard.html';
     }
-};
-
-function mostrarPerfilUsuario(usuario) {
-  document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
-  document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
-  document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
-  document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
-}
+  }
 
 
-  // Manejo del envío del formulario
-  document.getElementById("sendButton").addEventListener("click", function (event) {
-      // Validador y lógica de validación aquí (asegúrate de tener la referencia al validador)
 
-      // Verificar si los valores realmente han cambiado antes de actualizar el objeto usuarioActual
-      if (
-          usuarioActual.perfil.nombre !== document.getElementById("first_name").value ||
-          usuarioActual.perfil.rut !== document.getElementById("last_name").value ||
-          usuarioActual.perfil.correo !== document.getElementById("email").value ||
-          usuarioActual.perfil.direccion !== document.getElementById("phone").value
-      ) {
-          // Actualizar el objeto de usuario con los nuevos datos del formulario
-          usuarioActual.perfil.nombre = document.getElementById("first_name").value;
-          usuarioActual.perfil.rut = document.getElementById("last_name").value;
-          usuarioActual.perfil.correo = document.getElementById("email").value;
-          usuarioActual.perfil.direccion = document.getElementById("phone").value;
-
-          // Mostrar la información actualizada en el perfil del usuario
-          mostrarPerfilUsuario(usuarioActual);
-
-          // Agregar aquí la lógica para guardar los cambios o enviar el formulario
-          console.log("Form is valid. Submitting...");
-      } else {
-          console.log("Form values have not changed.");
-      }
-  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
