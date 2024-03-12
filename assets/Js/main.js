@@ -177,7 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const tablaProductos = document.getElementById('tablaProductos');
 
 class Producto {
-    constructor(nombre, precio, stock) {
+    constructor(id, nombre, precio, stock) {
+        this.id = id;  // Asigna un identificador único a cada producto
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -190,22 +191,23 @@ class Producto {
 }
 
 const productos = [
-    new Producto("Aceite Belmont 1lt", 4000, 800),
-    new Producto("Coca Cola 3lts", 3000, 500),
-    new Producto("Lavalozas Quix 1lt", 2850, 700),
-    new Producto("Leche Soprole Chocolate 1lt", 1200, 1200),
-    new Producto("Galletas Oreo Chocolate", 850, 80),
-    new Producto("Arroz Miraflores Granel", 1600, 980),
-    new Producto("Papel Higiénico Suave 4 rollos", 2000, 450),
-    new Producto("Manzanas Royal Gala (kg)", 3500, 600),
-    new Producto("Jabón Dove 100g", 1200, 250),
-    new Producto("Atún en lata 160g", 2500, 560),
+    new Producto(1, "Aceite Belmont 1lt", 4000, 800),
+    new Producto(2, "Coca Cola 3lts", 3000, 500),
+    new Producto(3, "Lavalozas Quix 1lt", 2850, 700),
+    new Producto(4, "Leche Soprole Chocolate 1lt", 1200, 1200),
+    new Producto(5, "Galletas Oreo Chocolate", 850, 80),
+    new Producto(6, "Arroz Miraflores Granel", 1600, 980),
+    new Producto(7, "Papel Higiénico Suave 4 rollos", 2000, 450),
+    new Producto(8, "Manzanas Royal Gala (kg)", 3500, 600),
+    new Producto(9, "Jabón Dove 100g", 1200, 250),
+    new Producto(10, "Atún en lata 160g", 2500, 560),
 ];
 
 function cargarProductos() {
     productos.forEach(function(producto) {
-        // Añade el producto a la tabla
         const fila = document.createElement('tr');
+        fila.id = `producto${producto.id}`;
+
         const celdaNombre = document.createElement('td');
         const celdaPrecio = document.createElement('td');
         const celdaCantidad = document.createElement('td');
@@ -221,6 +223,8 @@ function cargarProductos() {
         tablaProductos.appendChild(fila);
     });
 }
+
+
 
 // Llama a la función para cargar productos para categorias
 document.addEventListener('DOMContentLoaded', function () {
@@ -266,15 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
-
-
-
-
-
-
-
-
-
 
 
 
