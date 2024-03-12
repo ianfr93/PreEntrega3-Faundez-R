@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", function () {
 let usuarios = [{
   usuario: "usuario1",
   contraseña: "contraseña1",
@@ -65,6 +65,8 @@ let usuarios = [{
 
 let intentosRestantes = 5;
 
+
+
 // Función para autenticar al usuario
 function autenticarUsuario(event) {
   event.preventDefault();
@@ -99,10 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+});
 
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
 // Funciones y variables para la pantalla de caja
 let empresa;
 let caja;
@@ -140,7 +141,7 @@ function guardarYRedirigir() {
     window.location.href = './dashboard.html';
   }
 }
-
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -149,16 +150,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function mostrarPerfilUsuario(usuario) {
     // Establecer valores en los campos del formulario
-    $('#contact_form input[name="first_name"]').val(usuario.perfil.nombre);
-    $('#contact_form input[name="last_name"]').val(usuario.perfil.rut);
-    $('#contact_form input[name="email"]').val(usuario.perfil.correo);
-    $('#contact_form input[name="phone"]').val(usuario.perfil.direccion);
+    document.getElementById("first_name").value = usuario.perfil.nombre;
+    document.getElementById("last_name").value = usuario.perfil.rut;
+    document.getElementById("email").value = usuario.perfil.correo;
+    document.getElementById("phone").value = usuario.perfil.direccion;
 
     // Mostrar información en el div del perfil del usuario
-    $('#perfilUsuario #nombreUsuario').text(usuario.perfil.nombre);
-    $('#perfilUsuario #rutUsuario').text(usuario.perfil.rut);
-    $('#perfilUsuario #correoUsuario').text(usuario.perfil.correo);
-    $('#perfilUsuario #direccionUsuario').text(usuario.perfil.direccion);
+    document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
+    document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
+    document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
+    document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
 
     console.log(`Información del perfil para ${usuario.usuario}:`);
     console.log(`Nombre: ${usuario.perfil.nombre}`);
@@ -172,13 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
   mostrarPerfilUsuario(usuarioActual);
 
   // Evento para gestionar cambios en el formulario si es necesario
-  $('#contact_form input').on('input', function () {
-    // Llama a la función gestionarCambios si es necesario
-    // gestionarCambios();
+  document.querySelectorAll('#contact_form input').forEach(function (input) {
+    input.addEventListener('input', function () {
+      // Puedes agregar aquí la lógica para gestionar los cambios si es necesario
+      // gestionarCambios();
+    });
   });
 
   // Evento para el botón de guardar
-  $('#sendButton').on('click', function () {
+  document.getElementById('sendButton').addEventListener('click', function () {
     // Puedes agregar aquí la lógica para guardar los cambios si es necesario
     console.log("Guardando cambios...");
   });
@@ -186,140 +189,132 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  $('#contact_form').bootstrapValidator({
-      feedbackIcons: {
-          valid: 'glyphicon glyphicon-ok',
-          invalid: 'glyphicon glyphicon-remove',
-          validating: 'glyphicon glyphicon-refresh'
+  // Configuración del validador de Bootstrap
+  const contactForm = document.getElementById('contact_form');
+  const validator = new window.BV.BootstrapValidator(contactForm, {
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    live: 'enabled',
+    fields: {
+      first_name: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your first name'
+          },
+          stringLength: {
+            min: 2,
+            message: 'Please enter at least 2 characters'
+          }
+        }
       },
-      live: 'enabled',
-      fields: {
-          first_name: {
-              validators: {
-                  notEmpty: {
-                      message: 'Please supply your first name'
-                  },
-                  stringLength: {
-                      min: 2,
-                      message: 'Please enter at least 2 characters'
-                  }
-              }
+      last_name: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your last name'
           },
-          last_name: {
-              validators: {
-                  notEmpty: {
-                      message: 'Please supply your last name'
-                  },
-                  stringLength: {
-                      min: 2,
-                      message: 'Please enter at least 2 characters'
-                  }
-              }
+          stringLength: {
+            min: 2,
+            message: 'Please enter at least 2 characters'
+          }
+        }
+      },
+      email: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your email address'
           },
-          email: {
-              validators: {
-                  notEmpty: {
-                      message: 'Please supply your email address'
-                  },
-                  emailAddress: {
-                      message: 'Please supply a valid email address'
-                  }
-              }
+          emailAddress: {
+            message: 'Please supply a valid email address'
+          }
+        }
+      },
+      phone: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your phone number'
           },
           phone: {
-              validators: {
-                  notEmpty: {
-                      message: 'Please supply your phone number'
-                  },
-                  phone: {
-                      country: 'US',
-                      message: 'Please supply a valid phone number with area code'
-                  }
-              }
-          },
-      }
-  })
-  .on('success.form.bv', function (e) {
-      // Prevent the default form submission
-      e.preventDefault();
-
-      // Show success message
-      $('#success_message').slideDown({ opacity: "show" }, "slow");
-
-      // Reset the form
-      $('#contact_form').data('bootstrapValidator').resetForm();
+            country: 'US',
+            message: 'Please supply a valid phone number with area code'
+          }
+        }
+      },
+    }
   });
 
-  // Handling the button click
-  $('#sendButton').on('click', function () {
-    // Trigger the form validation
-    var validator = $('#contact_form').data('bootstrapValidator');
+  // Manejo del evento de éxito del formulario
+  contactForm.addEventListener('success.form.bv', function (e) {
+    // Evitar la presentación del formulario por defecto
+    e.preventDefault();
+
+    // Mostrar mensaje de éxito
+    document.getElementById('success_message').style.display = 'block';
+
+    // Reiniciar el formulario
+    validator.resetForm();
+  });
+
+  // Manejo del clic en el botón de envío
+  document.getElementById('sendButton').addEventListener('click', function () {
+    // Disparar la validación del formulario
     validator.validate();
 
-       // Check if the form is valid before submitting
-       if (validator.isValid()) {
-        // Perform any additional actions or submit the form
-        // For now, we'll just log a message to the console
-        console.log('Form is valid. Submitting...');
-      } else {
-        // Handle invalid form
-        // You can display error messages or change the styling here
-        alert('Form contains validation errors. Please check and correct them.');
-      }
+    // Verificar si el formulario es válido antes de enviar
+    if (validator.isValid()) {
+      // Realizar acciones adicionales o enviar el formulario
+      // Por ahora, solo registraremos un mensaje en la consola
+      console.log('Form is valid. Submitting...');
+    } else {
+      // Manejar formulario no válido
+      // Puedes mostrar mensajes de error o cambiar el estilo aquí
+      alert('Form contains validation errors. Please check and correct them.');
+    }
   });
 });
 
 
 
 
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
+  const contenedor = document.querySelector('.contenedor');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuNavSeg = document.querySelector('.menu-nav-seg');
+  const menuBotonI = document.querySelector('.menu-boton i');
 
-  $('.menu-toggle').click(function () {
-    $('.contenedor').toggleClass('ancho-min');
+  function toggleAnchoMin() {
+    contenedor.classList.toggle('ancho-min');
 
     if (!window.matchMedia('(min-width: 1017px)').matches) {
       /* Cambios cuando alcanzamos el min-width */
-      if (!$('.contenedor').hasClass("ancho-min")) {
+      if (!contenedor.classList.contains("ancho-min")) {
 
       } else {
 
       }
     }
-  });
+  }
 
-  $('.menu-boton').click(function () {
-    $('.menu-nav-seg').toggleClass('open-menu-nav-seg');
-    $('.menu-boton i').toggleClass('fa-caret-right');
-    $('.menu-boton i').toggleClass('fa-caret-down');
-  });
+  menuToggle.addEventListener('click', toggleAnchoMin);
 
-  /*
-   * Necesitamos convertirlo en una función.
-   * Para aplicar los cambios tanto cuando el documento está listo como cuando cambiamos el tamaño del navegador.
-   */
+  document.querySelector('.menu-boton').addEventListener('click', function () {
+    menuNavSeg.classList.toggle('open-menu-nav-seg');
+    menuBotonI.classList.toggle('fa-caret-right');
+    menuBotonI.classList.toggle('fa-caret-down');
+  });
 
   function mediaSize() {
     /* Establecer el matchMedia 992 + 250*/
     if (window.matchMedia('(min-width: 1017px)').matches) {
       /* Cambios cuando alcanzamos el min-width */
-      $('.contenedor').removeClass('ancho-min');
+      contenedor.classList.remove('ancho-min');
 
     } else {
       /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
-      $('.contenedor').addClass('ancho-min');
-
+      contenedor.classList.add('ancho-min');
     }
   };
 
@@ -334,45 +329,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
+  const contenedor = document.querySelector('.contenedor');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuNavSeg = document.querySelector('.menu-nav-seg');
+  const menuBotonI = document.querySelector('.menu-boton i');
 
-  $('.menu-toggle').click(function () {
-    $('.contenedor').toggleClass('ancho-min');
+  function toggleAnchoMin() {
+    contenedor.classList.toggle('ancho-min');
 
     if (!window.matchMedia('(min-width: 1017px)').matches) {
       /* Cambios cuando alcanzamos el min-width */
-      if (!$('.contenedor').hasClass("ancho-min")) {
+      if (!contenedor.classList.contains("ancho-min")) {
 
       } else {
 
       }
     }
-  });
+  }
 
-  $('.menu-boton').click(function () {
-    $('.menu-nav-seg').toggleClass('open-menu-nav-seg');
-    $('.menu-boton i').toggleClass('fa-caret-right');
-    $('.menu-boton i').toggleClass('fa-caret-down');
-  });
+  menuToggle.addEventListener('click', toggleAnchoMin);
 
-  /*
-   * Necesitamos convertirlo en una función.
-   * Para aplicar los cambios tanto cuando el documento está listo como cuando cambiamos el tamaño del navegador.
-   */
+  document.querySelector('.menu-boton').addEventListener('click', function () {
+    menuNavSeg.classList.toggle('open-menu-nav-seg');
+    menuBotonI.classList.toggle('fa-caret-right');
+    menuBotonI.classList.toggle('fa-caret-down');
+  });
 
   function mediaSize() {
     /* Establecer el matchMedia 992 + 250*/
     if (window.matchMedia('(min-width: 1017px)').matches) {
       /* Cambios cuando alcanzamos el min-width */
-      $('.contenedor').removeClass('ancho-min');
+      contenedor.classList.remove('ancho-min');
 
     } else {
       /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
-      $('.contenedor').addClass('ancho-min');
-
+      contenedor.classList.add('ancho-min');
     }
   };
 
@@ -381,5 +373,3 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
   window.addEventListener('resize', mediaSize, false);
 });
-
-
