@@ -297,198 +297,6 @@ h1 {
   margin-top: 20px;
 }
 /* Estilo para el menu despegable */
-.menu-lateral {
-  width: 100%;
-}
-.contenedor {
-  display: flex;
-  
-}
-
-.bg-white{
-  max-width: 100%;
-  padding-left:  30px;
-  background-color: transparent !important;
-  }
-  
-.main-container .bg-white {
-  padding-left:  30px;
-}
-.main {
-  flex-grow: 1;
-  padding: 15px;
-}
-.barra {
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  background: #424655; 
-  min-height: 100vh;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  align-items: flex-start;
-  width: 250px;
-}
-
-.logo {
-  width: 100%;
-  padding: 15px 0;
-  text-align: center;
-}
-
-.logo-sym {
-  vertical-align: middle;
-}
-
-.logo-texto {
-  margin-left: 10px;
-}
-
-.user {
-  margin-top: 20px;
-  padding-left: 10px;
-}
-
-.user img {
-  border-radius: 50%;
-}
-
-.user-nombre {
-  color: white;
-  margin-left: 5px;
-}
-
-.menu-nav {
-  padding-left: 10px;
-}
-
-.ancho {
-  width: 250px;
-}
-
-.ancho-min .user,
-.ancho-min .ancho {
-  padding-left: 0;
-  width: 70px;
-  align-items: center;
-}
-
-.ancho-min .menu-nav {
-  padding-left: 0;
-}
-
-.ancho-min li.menu-items {
-  display: block;
-  width: initial;
-}
-
-.ancho-min .menu-items span,
-.ancho-min .logo-texto,
-.ancho-min .user-nombre,
-.ancho-min .menu-titles,
-.ancho-min .menu-boton,
-.ancho-min .menu-nav-seg {
-  display: none !important;
-}
-
-.menu-nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-li.menu-items {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 230px;
-  justify-content: space-between;
-  span {
-    margin-left: 1rem;
-  }
-}
-
-.menu-nav a,
-.menu-nav .menu-titles {
-  color: #687384;
-  padding-top: 2rem;
-  display: block;
-  text-decoration: none;
-}
-
-.menu-nav .menu-titles {
-  text-transform: uppercase;
-}
-
-.menu-nav a:hover,
-ul.menu-nav-seg .menu-items-seg a:hover {
-  color: #EBEBD3;
-}
-
-.menu-nav--icon {
-  font-size: 1.3rem !important;
-  line-height: 1;
-  margin-right: 1rem;
-  text-align: left;
-  vertical-align: top;
-}
-
-ul.menu-nav-seg {
-  width: 100%;
-  display: none;
-  padding-left: 35px;
-}
-
-ul.open-menu-nav-seg {
-  display: block;
-}
-
-ul.menu-nav-seg .menu-items-seg a {
-  color: #687384;
-  padding-top: 9px;
-  display: block;
-  text-decoration: none;
-}
-
-a.menu-toggle {
-  cursor: pointer;
-}
-
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-
-.perfil-link{
-  color: #ffffff;
-}
-.perfil-link:hover{
-  color:#808495;
-}
-
-.category-list .btn {
-  width: 100%; 
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-}
-
-.search-bar .btn {
-  height: 38px;
-  margin-top: 20px;
-  margin-left: auto;
-}
-.search-bar .form-control {
-  width: 90%; 
-}
 
 #success_message{ display: none;}
 
@@ -497,66 +305,7 @@ a.menu-toggle {
   padding: 20px;
 }
 
-/* Estilos de las tarjetas */
-.product-card {
-  background-color: #ffffff;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out;
-}
 
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.product-details h4 {
-  margin-top: 10px;
-}
-
-.product-price {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #28a745; /* Verde */
-}
-
-.product-links a {
-  color: #007bff; /* Azul */
-  margin-right: 10px;
-}
-
-/* Badge */
-.badge {
-  background-color: #007bff; /* Azul */
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 14px;
-}
-
-/* Botón de añadir al carrito */
-.product-links button {
-  background-color: #007bff; /* Azul */
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.product-links button:hover {
-  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
-}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
  html {
@@ -599,14 +348,16 @@ a.menu-toggle {
  body nav ul li a:hover {
 	 background: #22303d;
 }
- body nav .search input {
-	 width: 394px;
+ .search input {
+	 width: 91%;
 	 height: 40px;
-	 margin-right: 30px;
+margin-left: 10px;
 	 border: none;
 	 border-radius: 5px;
 	 font-size: 16px;
 	 text-align: center;
+   background-color: #ececec;
+   margin-top: 20px;
 }
  body nav .search input::placeholder {
 	 font-style: italic;
