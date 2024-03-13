@@ -84,8 +84,6 @@ if (verPerfilLink) {
 }
 
 
-
-
   let intentosRestantes = 5;
 
   // Función para reiniciar el formulario
@@ -177,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
   const tablaProductos = document.getElementById('tablaProductos');
 
+
   class Producto {
       constructor(id, nombre, precio, stock) {
           this.id = id;  
@@ -225,9 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  cargarProductos();  // Llama a la función después de definirla y antes de cerrar el evento DOMContentLoaded
+  cargarProductos();  
 });
-
 
 
 // Llama a la función para cargar productos para categorias
@@ -276,98 +274,65 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  const contenedor = document.querySelector('.contenedor');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuNavSeg = document.querySelector('.menu-nav-seg');
-  const menuBotonI = document.querySelector('.menu-boton i');
+  const carrito = document.getElementById("carrito");
+  const historialComprasList = document.getElementById("historialCompras");
+  const totalCompraText = document.getElementById("totalCompra");
+  const realizarCompraBtn = document.getElementById("realizarCompraBtn");
 
-  function toggleAnchoMin() {
-    contenedor.classList.toggle('ancho-min');
+  let historialCompras = [];
+  let totalCompra = 0;
 
-    if (!window.matchMedia('(min-width: 1017px)').matches) {
-      /* Cambios cuando alcanzamos el min-width */
-      if (!contenedor.classList.contains("ancho-min")) {
+  realizarCompraBtn.addEventListener("click", realizarCompra);
 
-      } else {
-
-      }
-    }
+  function cargarProductos() {
+    // Implementa la lógica para cargar productos en la interfaz aquí
+    // Retorna la información del producto seleccionado
   }
 
-  menuToggle.addEventListener('click', toggleAnchoMin);
+  function actualizarCarrito() {
+    historialComprasList.innerHTML = "";
+    historialCompras.forEach((compra, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Compra ${index + 1}: ${compra.cantidad}x ${compra.producto} - $${compra.precio.toFixed(2)}`;
+      historialComprasList.appendChild(listItem);
+    });
 
-  document.querySelector('.menu-boton').addEventListener('click', function () {
-    menuNavSeg.classList.toggle('open-menu-nav-seg');
-    menuBotonI.classList.toggle('fa-caret-right');
-    menuBotonI.classList.toggle('fa-caret-down');
-  });
-
-  function mediaSize() {
-    /* Establecer el matchMedia 992 + 250*/
-    if (window.matchMedia('(min-width: 1017px)').matches) {
-      /* Cambios cuando alcanzamos el min-width */
-      contenedor.classList.remove('ancho-min');
-
-    } else {
-      /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
-      contenedor.classList.add('ancho-min');
-    }
-  };
-
-  /* Llama a la función */
-  mediaSize();
-  /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
-  window.addEventListener('resize', mediaSize, false);
-});
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const contenedor = document.querySelector('.contenedor');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuNavSeg = document.querySelector('.menu-nav-seg');
-  const menuBotonI = document.querySelector('.menu-boton i');
-
-  function toggleAnchoMin() {
-    contenedor.classList.toggle('ancho-min');
-
-    if (!window.matchMedia('(min-width: 1017px)').matches) {
-      /* Cambios cuando alcanzamos el min-width */
-      if (!contenedor.classList.contains("ancho-min")) {
-
-      } else {
-
-      }
-    }
+    totalCompraText.textContent = `Total de la compra: $${totalCompra.toFixed(2)}`;
   }
 
-  menuToggle.addEventListener('click', toggleAnchoMin);
+  function realizarCompra() {
+    do {
+      const productoInfo = cargarProductos();
 
-  document.querySelector('.menu-boton').addEventListener('click', function () {
-    menuNavSeg.classList.toggle('open-menu-nav-seg');
-    menuBotonI.classList.toggle('fa-caret-right');
-    menuBotonI.classList.toggle('fa-caret-down');
-  });
+      let cantidad = parseInt(prompt(`¿Cuántas cantidades del ${productoInfo.producto} desea llevar?`));
 
-  function mediaSize() {
-    /* Establecer el matchMedia 992 + 250*/
-    if (window.matchMedia('(min-width: 1017px)').matches) {
-      /* Cambios cuando alcanzamos el min-width */
-      contenedor.classList.remove('ancho-min');
+      historialCompras.push({
+        producto: productoInfo.producto,
+        precio: productoInfo.precio,
+        cantidad: cantidad
+      });
 
-    } else {
-      /* Restablecer para cambios de CSS - ¡Aún necesitamos una mejor manera de hacer esto! */
-      contenedor.classList.add('ancho-min');
-    }
-  };
+      totalCompra = totalCompra + productoInfo.precio * cantidad;
 
-  /* Llama a la función */
-  mediaSize();
-  /* Adjunta la función al escucha de eventos de cambio de tamaño de la ventana */
-  window.addEventListener('resize', mediaSize, false);
+      let continuar = confirm('¿Desea agregar otro producto al carrito de compras?');
+
+      if (!continuar) {
+        break;
+      }
+    } while (true);
+
+    const iva = totalCompra * 0.19;
+    const totalConIVA = totalCompra + iva;
+
+    alert(`El total de tu compra (con IVA) fue de $${totalConIVA.toFixed(2)}`);
+
+    // Implementa la lógica para actualizar el inventario aquí
+
+    // Actualiza la interfaz del carrito
+    actualizarCarrito();
+
+    // Implementa la lógica para enviar factura y mostrar información del cliente aquí
+  }
 });
+

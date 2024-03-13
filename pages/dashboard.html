@@ -54,7 +54,7 @@
     <div class="sellables-container">
         <div class="sellables">
             <div class="categories">
-         
+
                 <a class="category active" href="#" data-category="aceites">Aceites</a>
                 <a class="category" href="#" data-category="bebidas">Bebidas</a>
                 <a class="category" href="#" data-category="limpieza">Limpieza y Hogar</a>
@@ -65,12 +65,12 @@
                 <a class="category" href="#" data-category="treats">Treats</a>
                 <a class="category" href="#" data-category="cuidado">Cuidado Personal</a>
                 <a class="category" href="#" data-category="conservas">Conservas y Enlatados</a>
-                
+
             </div>
 
             <div class="item-group-wrapper">
 
-        
+
                 <div class="item-group" id="aceites">
                     <a href="#" class="item" data-product-id="1">Aceite Belmont 1lt</a>
                 </div>
@@ -116,46 +116,44 @@
 
 
         <div class="register-wrapper">
-
             <!-- Botones con iconos y separación -->
             <div class="d-flex justify-content-between mb-4" style="margin-top: 10px;">
                 <button class="btn btn-primary" id="btnProductoPorGlosa">
                     <i class="fas fa-shopping-cart"></i> Producto por Glosa
                 </button>
-
                 <div class="mx-2"></div> <!-- Espacio entre botones -->
-
                 <button class="btn btn-danger" id="btnBorrarVenta">
                     <i class="fas fa-trash-alt"></i> Borrar Venta
                 </button>
             </div>
-
+        
             <div class="register">
+                <!-- Carrito de Compras -->
+                <div id="carrito">
+                    <h2>Carrito de Compras</h2>
+                    <ul id="historialCompras"></ul>
+                    <p id="totalCompra"></p>
+                </div>
+        
+                <!-- Otros elementos de tu interfaz de usuario -->
+        
                 <div class="products">
                     <div class="product-bar selected">
-                        <span>Cookies</span>
-                        <span>$5.00</span>
+                        <span>Producto</span>
+                        <span>$0.00</span>
                     </div>
-
                     <div class="product-bar">
-                        <span>Cookies</span>
-                        <span>$5.00</span>
-                    </div>
-
-                    <div class="product-bar">
-                        <span>Cookies</span>
-                        <span>$5.00</span>
+                        <span>Producto</span>
+                        <span>$0.00</span>
                     </div>
                 </div>
-
+        
+                <ul id="historialCompras"></ul>
                 <div class="pay-button">
-                    <a href="#">Pay $50.00</a>
+                    <a href="#">Total a pagar</a>
                 </div>
             </div>
         </div>
-    </div>
-
- 
 
 
 
@@ -169,24 +167,27 @@
 
 
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
-    </script>
-
-    <!-- main.js -->
-    <script src="../assets/Js/main.js"></script>
-
-    <!-- Bootstrap Validator -->
-    <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
-    </script>
 
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha384-nvEwYbNmHi3yo33a1+BqJSxTEG0Q2LBrM2Lp3XaDJHgx2RR1/mFDWhR6H18maTYY" crossorigin="anonymous">
+        </script>
+
+        <!-- main.js -->
+        <script src="../assets/Js/main.js"></script>
+
+        <!-- Bootstrap Validator -->
+        <script src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.11.5/js/bootstrapValidator.min.js">
+        </script>
+
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
 </body>
 
