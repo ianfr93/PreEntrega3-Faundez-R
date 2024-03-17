@@ -25,38 +25,6 @@ const productos = [
   new Producto(10, "Atún en lata 160g", 2500, 560),
 ];
 
-function obtenerProductoPorId(productId) {
-  return productos.find(producto => producto.id === parseInt(productId));
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const tablaProductos = document.getElementById('tablaProductos');
-
-  function cargarProductos() {
-    productos.forEach(function(producto) {
-      const fila = document.createElement('tr');
-      fila.id = `producto${producto.id}`;
-
-      const celdaNombre = document.createElement('td');
-      const celdaPrecio = document.createElement('td');
-      const celdaCantidad = document.createElement('td');
-
-      celdaNombre.textContent = producto.nombre;
-      celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
-      celdaCantidad.textContent = producto.stock;
-
-      fila.appendChild(celdaNombre);
-      fila.appendChild(celdaPrecio);
-      fila.appendChild(celdaCantidad);
-
-      tablaProductos.appendChild(fila);
-    });
-  }
-
-  cargarProductos();  
-});
-
-
 // Llama a la función para cargar productos para categorias
 document.addEventListener('DOMContentLoaded', function () {
   const categories = document.querySelectorAll('.category');
