@@ -63,7 +63,6 @@ function cargarCarritoDesdeLocal() {
     });
   }
 }
-cargarCarritoDesdeLocal();
 
 // Función para validar el stock del producto
 function validarStock(producto) {
@@ -150,8 +149,6 @@ function limpiarCarrito(carrito) {
   });
 }
 
-limpiarCarrito(carrito);
-
 // Agregar evento click a los botones "Agregar" de cada producto
 document.querySelectorAll('.btn-primary').forEach(button => {
   button.addEventListener('click', function() {
@@ -172,4 +169,9 @@ document.querySelectorAll('[id^="btnBorrar-"]').forEach(button => {
       eliminarProducto(producto);
     }
   });
+});
+
+// Llamar a la función cargarCarritoDesdeLocal después de que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+  cargarCarritoDesdeLocal();
 });
