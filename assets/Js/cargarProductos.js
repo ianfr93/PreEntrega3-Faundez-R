@@ -1,3 +1,4 @@
+
 class Producto {
   constructor(id, nombre, precio, stock) {
     this.id = id;  
@@ -68,4 +69,5 @@ document.addEventListener('DOMContentLoaded', function () {
           group.style.display = 'none';
       }
   });
+
 });

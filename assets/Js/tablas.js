@@ -1,4 +1,3 @@
-import { productos } from './cargarProductos';
 document.addEventListener('DOMContentLoaded', function () {
     function obtenerProductoPorId(productId) {
         return productos.find(producto => producto.id === parseInt(productId));
@@ -29,5 +28,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cargarProductos();
 });
-
 
