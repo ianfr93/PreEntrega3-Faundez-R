@@ -424,3 +424,25 @@ function limpiarCarrito(carrito) {
 }
 
 limpiarCarrito(carrito);
+
+// Agregar evento click a los botones "Agregar" de cada producto
+document.querySelectorAll('.btn-primary').forEach(button => {
+  button.addEventListener('click', function() {
+      const productId = this.getAttribute('data-product-id');
+      const producto = obtenerProductoPorId(productId);
+      if (producto) {
+          escucharAgregar(producto);
+      }
+  });
+});
+
+// Agregar evento click a los botones "Borrar Producto" del carrito de compras
+document.querySelectorAll('[id^="btnBorrar-"]').forEach(button => {
+  button.addEventListener('click', function() {
+      const productId = this.getAttribute('id').split('-')[1];
+      const producto = obtenerProductoPorId(productId);
+      if (producto) {
+          eliminarProducto(producto);
+      }
+  });
+});
