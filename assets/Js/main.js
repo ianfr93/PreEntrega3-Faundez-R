@@ -274,65 +274,153 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const carrito = document.getElementById("carrito");
-  const historialComprasList = document.getElementById("historialCompras");
-  const totalCompraText = document.getElementById("totalCompra");
-  const realizarCompraBtn = document.getElementById("realizarCompraBtn");
+//comprar productos
 
-  let historialCompras = [];
-  let totalCompra = 0;
 
-  realizarCompraBtn.addEventListener("click", realizarCompra);
+const IVA_CHILE = 0.19; // Tasa de IVA en Chile (19%)
 
-  function cargarProductos() {
-    // Implementa la lógica para cargar productos en la interfaz aquí
-    // Retorna la información del producto seleccionado
-  }
-
-  function actualizarCarrito() {
-    historialComprasList.innerHTML = "";
-    historialCompras.forEach((compra, index) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `Compra ${index + 1}: ${compra.cantidad}x ${compra.producto} - $${compra.precio.toFixed(2)}`;
-      historialComprasList.appendChild(listItem);
-    });
-
-    totalCompraText.textContent = `Total de la compra: $${totalCompra.toFixed(2)}`;
-  }
-
-  function realizarCompra() {
-    do {
-      const productoInfo = cargarProductos();
-
-      let cantidad = parseInt(prompt(`¿Cuántas cantidades del ${productoInfo.producto} desea llevar?`));
-
-      historialCompras.push({
-        producto: productoInfo.producto,
-        precio: productoInfo.precio,
-        cantidad: cantidad
-      });
-
-      totalCompra = totalCompra + productoInfo.precio * cantidad;
-
-      let continuar = confirm('¿Desea agregar otro producto al carrito de compras?');
-
-      if (!continuar) {
-        break;
+function escucharAgregar(Producto) {
+  const btnComprar = document.getElementById(`btnComprar-${Producto.nombre.toLowerCase()}`),
+      slcStock = document.getElementById(`${Producto.nombre}-cantidad`);
+  btnComprar.addEventListener('click', (e) => {
+      e.preventDefault()
+      cantidad = slcStock.value;
+      if (log) {
+          agregarAlCarrito(Producto, cantidad, Producto.precio);
+      } else {
+          alert('Debe Logearse primero.')
       }
-    } while (true);
+  });
+}
 
-    const iva = totalCompra * 0.19;
-    const totalConIVA = totalCompra + iva;
-
-    alert(`El total de tu compra (con IVA) fue de $${totalConIVA.toFixed(2)}`);
-
-    // Implementa la lógica para actualizar el inventario aquí
-
-    // Actualiza la interfaz del carrito
-    actualizarCarrito();
-
-    // Implementa la lógica para enviar factura y mostrar información del cliente aquí
+function agregarAlCarrito(Producto, cantidad, precio) {
+  if (validarStock(Producto)) {
+    // Calcular el precio total, incluyendo el IVA
+    const precioConIVA = precio * (1 + IVA_CHILE);
+    
+    prod = carrito.find(item => item.Producto.toLowerCase() === Producto.nombre.toLowerCase());
+    if (!prod) {
+        carrito.push({ Producto: Producto.nombre, Precio: precioConIVA, Unidades: parseInt(cantidad) });
+        restarStock(cantidad, Producto);
+        imprimeCarrito(carrito);
+        modificarStockYHtml(Producto, Producto.stock, Producto.nombre);
+    } else if (validarStock(Producto)) {
+        prod.Unidades += parseInt(cantidad);
+        restarStock(cantidad, Producto);
+        modificarStockYHtml(Producto, Producto.stock, Producto.nombre);
+        const contUnidades = document.getElementById(`${prod.Producto}-unidades`);
+        let nuevasUnidades = innerHTML = `<p>Unidades seleccionadas: ${prod.Unidades}</p>`;
+        contUnidades.innerHTML = nuevasUnidades;
+    }
+    totalAPagar(carrito);
+    carritoALocal(carrito)
+    return carrito
   }
-});
+}
 
+function carritoALocal(carrito) {
+  const prodEnJson = JSON.stringify(carrito);
+  localStorage.setItem('carrito', prodEnJson);
+}
+
+function cargarCarritoDesdeLocal() {
+  const carritoDesdeLocal = localStorage.getItem('carrito');
+  if (carritoDesdeLocal) {
+      let carritoLocal = JSON.parse(carritoDesdeLocal);
+      carritoLocal.forEach(producto => {
+          const contCarrito = document.getElementById('carrito'),
+              listaCreada = document.createElement('li');
+          listaCreada.classList.add(`${producto.Producto}-li`)
+          listaCreada.innerHTML = crearCarritoHtml(producto)
+          contCarrito.append(listaCreada)
+          totalAPagar(carritoLocal);
+          eliminarProducto(producto);
+      });
+  }
+}
+cargarCarritoDesdeLocal()
+
+function validarStock(producto) {
+  return (producto.stock <= 0) ? ( //utilizacion de operador ternario
+      (alert(`Lo lamento, no tenemos más unidades de ${producto.nombre}`)), false
+  ) : true;
+}
+
+
+function restarStock(cantidad, Producto) {
+  let productoEncontrado = obtenerProducto(Producto.nombre);
+  if (productoEncontrado) {
+      if (productoEncontrado.stock >= parseInt(cantidad)) {
+          productoEncontrado.stock -= parseInt(cantidad);
+      }
+  }
+}
+
+function imprimeCarrito() {
+  let ultimo = carrito[carrito.length - 1];
+  const contCarrito = document.getElementById('carrito'),
+      listaCreada = document.createElement('li');
+  listaCreada.classList.add(`${ultimo.Producto}-li`)
+  listaCreada.innerHTML = crearCarritoHtml(ultimo)
+  contCarrito.append(listaCreada)
+  eliminarProducto(ultimo)
+}
+
+function totalAPagar(carrito) {
+  aPagar = carrito.reduce((total, producto) => total += (producto.Unidades * producto.Precio), 0)
+  const parrafo = document.getElementById('total');
+  parrafo.innerText = `Total a pagar: $${aPagar.toFixed(2)}`;
+  return aPagar
+}
+
+crearProductosAlHTML();
+
+function crearCarritoHtml(Producto) {
+  // Calcular el precio total con IVA incluido
+  const precioTotal = Producto.Precio * (1 + IVA_CHILE);
+  
+  return `<div id="${Producto.Producto}-cardCarrito" class="cardCarrito">
+  <h3>${Producto.Producto.charAt(0).toUpperCase() + Producto.Producto.slice(1)}</h3>
+  <p>Precio unitario: $${precioTotal.toFixed(2)}</p>
+  <p id="${Producto.Producto.toLowerCase()}-unidades">Unidades seleccionadas: ${Producto.Unidades}</p>
+  <div id="${Producto.Producto.toLowerCase()}-contBoton">
+      <button id="btnBorrar-${Producto.Producto.toLowerCase()}" class="btnComprar">Borrar Producto</button>
+  </div>
+</div>`;
+}
+
+function eliminarProducto(Producto) {
+  const btnBorrar = document.getElementById(`btnBorrar-${Producto.Producto.toLowerCase()}`);
+  btnBorrar.addEventListener('click', () => {
+      const cardCarrito = document.querySelector(`.${Producto.Producto}-li`);
+      cardCarrito.remove();
+      let eliminado = obtenerProducto(Producto.Producto);
+      eliminado.stock += Producto.Unidades;
+      carrito.pop(eliminado);
+      carritoALocal(carrito);
+      modificarStockYHtml(eliminado, eliminado.stock, Producto.Producto);
+      aPagar -= (Producto.Unidades * Producto.Precio);
+      const parrafo = document.getElementById('total');
+      parrafo.innerText = `Total a pagar: $${aPagar.toFixed(2)}`;
+  });
+}
+
+function limpiarCarrito(carrito) {
+  const btnlimpiar = document.getElementById('btnlim');
+  btnlimpiar.addEventListener('click', () => {
+      carrito.forEach((producto) => {
+          const cardCarrito = document.querySelector(`.${producto.Producto}-li`);
+          cardCarrito.remove();
+          const productoEncontrado = obtenerProducto(producto.Producto);
+          productoEncontrado.stock += producto.Unidades;
+          modificarStockYHtml(productoEncontrado, productoEncontrado.stock, producto.Producto);
+      });
+      aPagar = 0;
+      const parrafo = document.getElementById("total");
+      parrafo.innerText = `Total a pagar: $${aPagar.toFixed(2)}`;
+      localStorage.removeItem("carrito");
+      carrito.length = 0;
+  });
+}
+
+limpiarCarrito(carrito);
