@@ -1,4 +1,3 @@
-
 const IVA_CHILE = 0.19; // Tasa de IVA en Chile (19%)
 
 // Función para escuchar el evento de agregar producto al carrito
@@ -151,7 +150,7 @@ function limpiarCarrito(carrito) {
 
 // Función para obtener un producto por su ID
 function obtenerProductoPorId(productId) {
-  // Aquí deberías implementar la lógica para obtener el producto por su ID
+  return productos.find(producto => producto.id === parseInt(productId));
 }
 
 // Agregar evento click a los botones "Agregar" de cada producto
