@@ -68,23 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
     document.getElementById("direccionUsuario").innerText =
       usuario.perfil.direccion;
-
   }
-
-  // Agrega el evento click al enlace "Ver mi perfil"
-const verPerfilLink = document.getElementById("verPerfil");
-if (verPerfilLink) {
-  verPerfilLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    // Obtén el índice del usuario desde la URL o de alguna otra manera que necesites
-    // En este ejemplo, se asume que solo hay un usuario y se utiliza el índice 0.
-    const index = 0; // Cambia esto según tus necesidades
-    mostrarPerfil(index);
-  });
-}
-
-
-  let intentosRestantes = 5;
 
   // Función para reiniciar el formulario
   function resetForm() {
@@ -118,6 +102,9 @@ if (verPerfilLink) {
     }
   }
 
+  // Inicializar intentos restantes
+  let intentosRestantes = 5;
+
   // Llama a autenticarUsuario si quedan intentos restantes
   if (intentosRestantes > 0) {
     autenticarUsuario(event);
@@ -128,9 +115,9 @@ if (verPerfilLink) {
   if (loginForm) {
     loginForm.addEventListener("submit", autenticarUsuario);
   }
-// Por ejemplo, para mostrar el perfil del primer usuario en la lista
-mostrarPerfil(usuarios[0]);
 
+  // Por ejemplo, para mostrar el perfil del primer usuario en la lista
+  mostrarPerfil(usuarios[0]);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -171,4 +158,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
