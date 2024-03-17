@@ -149,6 +149,11 @@ function limpiarCarrito(carrito) {
   });
 }
 
+// Función para obtener un producto por su ID
+function obtenerProductoPorId(productId) {
+  // Aquí deberías implementar la lógica para obtener el producto por su ID
+}
+
 // Agregar evento click a los botones "Agregar" de cada producto
 document.querySelectorAll('.btn-primary').forEach(button => {
   button.addEventListener('click', function() {
