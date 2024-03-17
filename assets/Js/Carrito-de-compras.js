@@ -100,15 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
-
-
-
-
-
-
-
 const IVA_CHILE = 0.19; // Tasa de IVA en Chile (19%)
 
 // Función para escuchar el evento de agregar producto al carrito
