@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   class Producto {
-      constructor(id, nombre, precio, stock) {
-          this.id = id;  
-          this.nombre = nombre;
-          this.precio = precio;
-          this.stock = stock;
-      }
+    constructor(id, nombre, precio, stock) {
+        this.id = id;  
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
 
       vender(cantidad) {
           this.stock -= cantidad;
