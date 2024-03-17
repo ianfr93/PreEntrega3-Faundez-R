@@ -61,14 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // Función para mostrar el perfil del usuario en pantalla
-  function mostrarPerfil(usuario) {
-    document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
-    document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
-    document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
-    document.getElementById("direccionUsuario").innerText =
-      usuario.perfil.direccion;
-  }
+
 
   // Función para reiniciar el formulario
   function resetForm() {
