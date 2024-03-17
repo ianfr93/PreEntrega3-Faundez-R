@@ -281,9 +281,3 @@ document.addEventListener('DOMContentLoaded', () => {
   cargarCarritoDesdeLocal();
 });
 
-
-
-
-
-
-
