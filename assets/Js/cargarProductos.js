@@ -37,6 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
       new Producto(10, "Atún en lata 160g", 2500, 560),
   ];
 
+  function cargarProductos() {
+      productos.forEach(function(producto) {
+          const fila = document.createElement('tr');
+          fila.id = `producto${producto.id}`;
+
+          const celdaNombre = document.createElement('td');
+          const celdaPrecio = document.createElement('td');
+          const celdaCantidad = document.createElement('td');
+
+          celdaNombre.textContent = producto.nombre;
+          celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
+          celdaCantidad.textContent = producto.stock;
+
+          fila.appendChild(celdaNombre);
+          fila.appendChild(celdaPrecio);
+          fila.appendChild(celdaCantidad);
+
+          tablaProductos.appendChild(fila);
+      });
+  }
+
   cargarProductos();  
 });
 
