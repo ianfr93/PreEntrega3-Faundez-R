@@ -1,103 +1,32 @@
-class Producto {
-  constructor(id, nombre, precio, stock) {
-    this.id = id;  
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
+document.addEventListener("DOMContentLoaded", function () {
+  let usuarios = [{ /* Aquí va tu array de usuarios */ }];
+
+  // Función para mostrar el perfil del usuario en pantalla
+  function mostrarPerfil(usuario) {
+      document.getElementById("nombreUsuario").innerText = usuario.perfil.nombre;
+      document.getElementById("rutUsuario").innerText = usuario.perfil.rut;
+      document.getElementById("correoUsuario").innerText = usuario.perfil.correo;
+      document.getElementById("direccionUsuario").innerText = usuario.perfil.direccion;
   }
 
-  vender(cantidad) {
-    this.stock -= cantidad;
-    return this.precio * cantidad;
-  }
-}
+  // Obtener la información del usuario autenticado (puede variar según tu aplicación)
+  let usuarioAutenticado = obtenerUsuarioAutenticado();
 
-const productos = [
-  new Producto(1, "Aceite Belmont 1lt", 4000, 800),
-  new Producto(2, "Coca Cola 3lts", 3000, 500),
-  new Producto(3, "Lavalozas Quix 1lt", 2850, 700),
-  new Producto(4, "Leche Soprole Chocolate 1lt", 1200, 1200),
-  new Producto(5, "Galletas Oreo Chocolate", 850, 80),
-  new Producto(6, "Arroz Miraflores Granel", 1600, 980),
-  new Producto(7, "Papel Higiénico Suave 4 rollos", 2000, 450),
-  new Producto(8, "Manzanas Royal Gala (kg)", 3500, 600),
-  new Producto(9, "Jabón Dove 100g", 1200, 250),
-  new Producto(10, "Atún en lata 160g", 2500, 560),
-];
+  // Encontrar el perfil del usuario autenticado en el array de usuarios
+  let perfilUsuario = usuarios.find(usuario => usuario.usuario === usuarioAutenticado);
 
-function obtenerProductoPorId(productId) {
-  return productos.find(producto => producto.id === parseInt(productId));
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const tablaProductos = document.getElementById('tablaProductos');
-
-  function cargarProductos() {
-    productos.forEach(function(producto) {
-      const fila = document.createElement('tr');
-      fila.id = `producto${producto.id}`;
-
-      const celdaNombre = document.createElement('td');
-      const celdaPrecio = document.createElement('td');
-      const celdaCantidad = document.createElement('td');
-
-      celdaNombre.textContent = producto.nombre;
-      celdaPrecio.textContent = `$${producto.precio.toFixed(2)}`;
-      celdaCantidad.textContent = producto.stock;
-
-      fila.appendChild(celdaNombre);
-      fila.appendChild(celdaPrecio);
-      fila.appendChild(celdaCantidad);
-
-      tablaProductos.appendChild(fila);
-    });
+  // Mostrar el perfil del usuario en pantalla
+  if (perfilUsuario) {
+      mostrarPerfil(perfilUsuario);
+  } else {
+      console.error("Usuario no encontrado");
   }
 
-  cargarProductos();  
-});
-
-
-// Llama a la función para cargar productos para categorias
-document.addEventListener('DOMContentLoaded', function () {
-  const categories = document.querySelectorAll('.category');
-  const itemGroups = document.querySelectorAll('.item-group');
-
-  categories.forEach(function (category) {
-      category.addEventListener('click', function () {
-          // Remueve la clase 'active' de todas las categorías
-          categories.forEach(function (c) {
-              c.classList.remove('active');
-          });
-
-          // Agrega la clase 'active' a la categoría seleccionada
-          category.classList.add('active');
-
-          // Filtra los productos según la categoría seleccionada
-          const selectedCategory = category.dataset.category;
-
-          itemGroups.forEach(function (group) {
-              if (group.id === selectedCategory || selectedCategory === 'todos') {
-                  group.style.display = 'block';
-              } else {
-                  group.style.display = 'none';
-              }
-          });
-      });
-  });
-
-  // Muestra inicialmente los productos de la categoría "Aceites"
-  const initialCategory = 'aceites';
-  categories.forEach(function (category) {
-      if (category.dataset.category === initialCategory) {
-          category.classList.add('active');
-      }
-  });
-
-  itemGroups.forEach(function (group) {
-      if (group.id === initialCategory) {
-          group.style.display = 'block';
-      } else {
-          group.style.display = 'none';
-      }
-  });
+  // Función para obtener el usuario autenticado (simulada)
+  function obtenerUsuarioAutenticado() {
+      // Aquí puedes implementar la lógica para obtener el usuario autenticado
+      // Por ejemplo, podrías obtenerlo de localStorage, sessionStorage o de una cookie.
+      // En este caso, lo simularemos devolviendo un usuario de ejemplo.
+      return "usuario1"; // Cambia esto por la lógica real de tu aplicación
+  }
 });
