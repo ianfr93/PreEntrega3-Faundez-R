@@ -265,29 +265,29 @@ h1 {
   margin-top: -10px;
 }
 
-/* Estilo para el rectángulo */
+
 /* Estilo para el rectángulo */
 .rectangulo-BG {
-  background-color: #2b5c6f !important; /* Color de fondo azul (#007bff) */
-  color: #fff; /* Color de texto blanco */
-  padding: 1.5rem; /* Espaciado interno */
-  border-radius: 0.15rem; /* Bordes redondeados */
-  display: flex; /* Utiliza el modelo de caja flexible para alinear elementos */
-  align-items: center; /* Centra verticalmente los elementos en el contenedor */
+  background-color: #2b5c6f !important; 
+  color: #fff; 
+  padding: 1.5rem; 
+  border-radius: 0.15rem; 
+  display: flex; 
+  align-items: center; 
   height: 2px;
 }
 
 /* Estilo para el ícono de cajero */
 .fa-cash-register {
-  font-size: 1.8rem !important; /* Tamaño del ícono ajustado */
-  margin-right: 1rem; /* Espaciado derecho entre el ícono y el título */
+  font-size: 1.8rem !important; 
+  margin-right: 1rem; 
   margin-top: 12px;
 }
 
 /* Estilo para el título */
 .h4 {
-  font-size: 1.2rem !important; /* Tamaño del título */
-  margin: 0; /* Elimina el margen predeterminado */
+  font-size: 1.2rem !important; 
+  margin: 0; 
   margin-top: 5px !important;
 }
 
@@ -482,15 +482,15 @@ margin-left: 10px;
  
 .item-group-wrapper {
   display: flex;
-  gap: 10px; /* Espacio entre los grupos */
+  gap: 10px; 
 }
 
 .item-group {
   display: flex;
-  flex-direction: column; /* Cambia la dirección del flexbox a columna */
-  align-items: center; /* Centra los elementos en el eje transversal */
-  gap: 15px; /* Espacio entre los elementos */
-  width: 200px; /* Ancho máximo de cada grupo */
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+  width: 200px; 
 }
 
 .product-info {
@@ -518,6 +518,9 @@ margin-left: 10px;
   max-width: 100%;
 }
 
+.dropdown{
+background: transparent;
+}
 @media screen and (min-width: 1400px) {
   .register-login .bg-image-container {
     width: 50%; 
