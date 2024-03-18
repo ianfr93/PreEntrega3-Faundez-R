@@ -1,15 +1,14 @@
-
 class Producto {
   constructor(id, nombre, precio, stock) {
-      this.id = id;  
-      this.nombre = nombre;
-      this.precio = precio;
-      this.stock = stock;
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+    this.stock = stock;
   }
 
   vender(cantidad) {
-      this.stock -= cantidad;
-      return this.precio * cantidad;
+    this.stock -= cantidad;
+    return this.precio * cantidad;
   }
 }
 
@@ -32,61 +31,68 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
 
   categories.forEach(function (category) {
-      category.addEventListener('click', function () {
-          categories.forEach(function (c) {
-              c.classList.remove('active');
-          });
-
-          category.classList.add('active');
-
-          const selectedCategory = category.dataset.category;
-
-          itemGroups.forEach(function (group) {
-              if (group.id === selectedCategory || selectedCategory === 'todos') {
-                  group.style.display = 'block';
-              } else {
-                  group.style.display = 'none';
-              }
-          });
+    category.addEventListener('click', function () {
+      categories.forEach(function (c) {
+        c.classList.remove('active');
       });
+
+      category.classList.add('active');
+
+      const selectedCategory = category.dataset.category;
+
+      itemGroups.forEach(function (group) {
+        if (group.id === selectedCategory || selectedCategory === 'todos') {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+    });
   });
 
   const initialCategory = 'aceites';
   categories.forEach(function (category) {
-      if (category.dataset.category === initialCategory) {
-          category.classList.add('active');
-      }
+    if (category.dataset.category === initialCategory) {
+      category.classList.add('active');
+    }
   });
 
   itemGroups.forEach(function (group) {
-      if (group.id === initialCategory) {
-          group.style.display = 'block';
-      } else {
-          group.style.display = 'none';
-      }
+    if (group.id === initialCategory) {
+      group.style.display = 'block';
+    } else {
+      group.style.display = 'none';
+    }
   });
 
   // Agregar evento de input al campo de búsqueda
   searchInput.addEventListener('input', function () {
-      buscar();
+    buscar();
   });
 
   // Función para buscar productos
   function buscar() {
-      const inputBusqueda = searchInput.value.toLowerCase();
+    const inputBusqueda = searchInput.value.toLowerCase();
 
-      itemGroups.forEach(function (group) {
-          const productosEnGrupo = group.querySelectorAll('.item');
+    itemGroups.forEach(function (group) {
+      const productosEnGrupo = group.querySelectorAll('.item');
+      let algunProductoCoincide = false;
 
-          productosEnGrupo.forEach(function (producto) {
-              const nombreProducto = producto.textContent.toLowerCase();
+      productosEnGrupo.forEach(function (producto) {
+        const nombreProducto = producto.textContent.toLowerCase();
 
-              if (nombreProducto.includes(inputBusqueda)) {
-                  group.style.display = 'block';
-              } else {
-                  group.style.display = 'none';
-              }
-          });
+        if (nombreProducto.includes(inputBusqueda)) {
+          group.style.display = 'block';
+          algunProductoCoincide = true;
+        } else {
+          group.style.display = 'none';
+        }
       });
+
+      // Restaurar la visibilidad si no hay búsqueda o algún producto coincide
+      if (inputBusqueda === '' || algunProductoCoincide) {
+        group.style.display = 'block';
+      }
+    });
   }
 });

@@ -480,40 +480,6 @@ margin-left: 10px;
 	 background: #3b8e71;
 }
  
-.item-group-wrapper {
-  display: flex;
-  gap: 10px; 
-}
-
-.item-group {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  gap: 15px; 
-  width: 200px; 
-}
-
-.product-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item {
-  flex: 1;
-  width: 100%; 
-  max-width: 100%;
-  height: 100px; 
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.btn-agregar {
-  margin-top: 10px; 
-  background-color: #242348;
-}
 .sellables-container{
   max-width: 100%;
 }
@@ -521,6 +487,135 @@ margin-left: 10px;
 .dropdown{
 background: transparent;
 }
+
+.wrapper {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(30.33% - 20px);
+  height: auto;
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.2s linear;
+  background-color: white;
+  margin-bottom: 30px; /* Agregar un margen inferior para separar las tarjetas */
+  margin-right: 10px; /* Agregar un margen derecho para separar las tarjetas horizontalmente */
+  margin-left: 20px;
+  background-color: #2c5d70;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 10px 1px;
+}
+.card .image {
+  background-color: #fff;
+  overflow: hidden;
+  height: 150px; /* Establece la altura deseada para las imágenes */
+  width: 100%; /* Ocupa el ancho completo de su contenedor */
+  display: flex; /* Hace que el contenedor sea un contenedor flexible */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  background-position: center;
+  background-size: contain; /* Cambia el tamaño de fondo para que la imagen se ajuste completamente dentro del contenedor */
+}
+.card .image img {
+  width: 50%; /* Ajusta el ancho de la imagen para ocupar completamente su contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la relación de aspecto */
+ 
+
+}
+
+
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product .product-name {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.product .product-author {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: grey;
+  cursor: pointer;
+}
+
+.product .product-author:hover {
+  text-decoration: underline;
+}
+
+.card .product-rating i:nth-child(-n+4) {
+  color: red;
+}
+
+.card .description p {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.card .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card .price div .before-price,
+.card .price div .now-price {
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.card .price div .before-price {
+  text-decoration: line-through;
+  background-color: black;
+  color: #ff2323;
+}
+
+.card .price div .now-price {
+  background-color: red;
+  color: white;
+}
+
+.card .price button {
+  padding: 5px 10px;
+  background-color: #242348;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .price button:hover {
+  box-shadow: 0 0 10px 1px black;
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    justify-content: center; /* Centra las tarjetas en dispositivos móviles */
+  }
+
+  .card {
+    width: calc(50% - 20px); /* Cambia el ancho de las tarjetas en dispositivos móviles */
+  }
+}
+
+
+
+
 @media screen and (min-width: 1400px) {
   .register-login .bg-image-container {
     width: 50%; 
