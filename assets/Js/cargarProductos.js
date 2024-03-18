@@ -1,15 +1,15 @@
 
 class Producto {
   constructor(id, nombre, precio, stock) {
-    this.id = id;  
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
+      this.id = id;  
+      this.nombre = nombre;
+      this.precio = precio;
+      this.stock = stock;
   }
 
   vender(cantidad) {
-    this.stock -= cantidad;
-    return this.precio * cantidad;
+      this.stock -= cantidad;
+      return this.precio * cantidad;
   }
 }
 
@@ -26,22 +26,19 @@ const productos = [
   new Producto(10, "Atún en lata 160g", 2500, 560),
 ];
 
-// Llama a la función para cargar productos para categorias
 document.addEventListener('DOMContentLoaded', function () {
   const categories = document.querySelectorAll('.category');
   const itemGroups = document.querySelectorAll('.item-group');
+  const searchInput = document.getElementById('searchInput');
 
   categories.forEach(function (category) {
       category.addEventListener('click', function () {
-          // Remueve la clase 'active' de todas las categorías
           categories.forEach(function (c) {
               c.classList.remove('active');
           });
 
-          // Agrega la clase 'active' a la categoría seleccionada
           category.classList.add('active');
 
-          // Filtra los productos según la categoría seleccionada
           const selectedCategory = category.dataset.category;
 
           itemGroups.forEach(function (group) {
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // Muestra inicialmente los productos de la categoría "Aceites"
   const initialCategory = 'aceites';
   categories.forEach(function (category) {
       if (category.dataset.category === initialCategory) {
@@ -70,4 +66,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
+  // Agregar evento de input al campo de búsqueda
+  searchInput.addEventListener('input', function () {
+      buscar();
+  });
+
+  // Función para buscar productos
+  function buscar() {
+      const inputBusqueda = searchInput.value.toLowerCase();
+
+      itemGroups.forEach(function (group) {
+          const productosEnGrupo = group.querySelectorAll('.item');
+
+          productosEnGrupo.forEach(function (producto) {
+              const nombreProducto = producto.textContent.toLowerCase();
+
+              if (nombreProducto.includes(inputBusqueda)) {
+                  group.style.display = 'block';
+              } else {
+                  group.style.display = 'none';
+              }
+          });
+      });
+  }
 });

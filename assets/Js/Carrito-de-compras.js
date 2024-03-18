@@ -1,11 +1,9 @@
-
 document.addEventListener("DOMContentLoaded", function() {
   // Agregar evento click al botón de buscar
-  var btnBuscar = document.querySelector('.btn-login');
+  var btnBuscar = document.getElementById('btnBuscar');
   btnBuscar.addEventListener('click', function() {
       buscar();
   });
-
   // Agregar evento click a los botones de agregar producto
   var botonesAgregar = document.querySelectorAll('.btn-primary');
   botonesAgregar.forEach(function(boton) {
@@ -15,11 +13,28 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Función para buscar productos
-  function buscar() {
-      var inputBusqueda = document.getElementById('searchInput').value;
-      // Aquí puedes implementar la lógica para buscar productos
-      // Por ejemplo, filtrar los productos por nombre o categoría
-  }
+function buscar() {
+  var inputBusqueda = document.getElementById('searchInput').value.toLowerCase();
+  var productos = document.querySelectorAll('.item-group');
+  
+  productos.forEach(function(producto) {
+      var nombreProductoElemento = producto.querySelector('.item');
+      if (nombreProductoElemento) {
+          var nombreProducto = nombreProductoElemento.textContent.toLowerCase();
+          var idProducto = producto.getAttribute('id');
+          var categoriaProducto = producto.getAttribute('data-category').toLowerCase();
+          
+          // Verificar si la búsqueda coincide con el nombre, ID o categoría del producto
+          if (nombreProducto.includes(inputBusqueda) || idProducto === inputBusqueda || categoriaProducto.includes(inputBusqueda)) {
+              // Si hay coincidencia, mostrar el producto
+              producto.style.display = 'block';
+          } else {
+              // Si no hay coincidencia, ocultar el producto
+              producto.style.display = 'none';
+          }
+      }
+  });
+}
 
   // Función para agregar producto al carrito
   function agregarAlCarrito(idProducto) {
