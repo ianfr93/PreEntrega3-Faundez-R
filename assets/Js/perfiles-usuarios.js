@@ -1,5 +1,3 @@
-// perfilUsuario.js
-
 // Función para cargar los datos del usuario desde localStorage
 function cargarDatosUsuario() {
     var nombre = localStorage.getItem("nombreUsuario");
@@ -16,10 +14,10 @@ function cargarDatosUsuario() {
 
 // Función para guardar los datos del usuario en localStorage
 function guardarDatosUsuario() {
-    var nombre = document.getElementById("nombreInput").value;
-    var rut = document.getElementById("rutInput").value;
-    var correo = document.getElementById("correoInput").value;
-    var direccion = document.getElementById("direccionInput").value;
+    var nombre = document.querySelector('input[name="first_name"]').value;
+    var rut = document.querySelector('input[name="last_name"]').value;
+    var correo = document.querySelector('input[name="email"]').value;
+    var direccion = document.querySelector('input[name="phone"]').value;
 
     // Guardar los datos en localStorage
     localStorage.setItem("nombreUsuario", nombre);
