@@ -75,24 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputBusqueda = searchInput.value.toLowerCase();
 
     itemGroups.forEach(function (group) {
-      const productosEnGrupo = group.querySelectorAll('.item');
+      const productosEnGrupo = group.querySelectorAll('.product-name');
       let algunProductoCoincide = false;
 
       productosEnGrupo.forEach(function (producto) {
         const nombreProducto = producto.textContent.toLowerCase();
 
         if (nombreProducto.includes(inputBusqueda)) {
-          group.style.display = 'block';
           algunProductoCoincide = true;
-        } else {
-          group.style.display = 'none';
         }
       });
 
-      // Restaurar la visibilidad si no hay búsqueda o algún producto coincide
-      if (inputBusqueda === '' || algunProductoCoincide) {
+      // Mostrar u ocultar el grupo dependiendo de si algún producto coincide con la búsqueda
+      if (algunProductoCoincide || inputBusqueda === '') {
         group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
       }
     });
   }
+
 });

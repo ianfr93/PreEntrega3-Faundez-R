@@ -487,17 +487,29 @@ margin-left: 10px;
 .dropdown{
 background: transparent;
 }
+.item-group{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Define las columnas con un ancho mínimo de 280px */
+  gap: 20px; 
+  width: 100%; 
+  margin: 0 auto; 
+}
+.wrapper .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Define las columnas con un ancho mínimo de 280px */
+  gap: 20px; 
+  width: 100%; 
+  margin: 0 auto; 
+}
 
-
-
-.item-group .wrapper {
+ .item-group .wrapper {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.item-group .card {
+ .item-group .card {
   width: calc(30.33% - 20px);
   height: auto;
   border: 1px solid black;
