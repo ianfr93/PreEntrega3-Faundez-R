@@ -613,6 +613,11 @@ background: transparent;
 
 }
 
+td span {
+  padding: 0 10px; 
+}
+
+
 .item-group .card .price button:hover {
   box-shadow: 0 0 10px 1px black;
 }
