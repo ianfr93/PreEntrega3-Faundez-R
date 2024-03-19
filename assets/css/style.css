@@ -487,26 +487,14 @@ margin-left: 10px;
 .dropdown{
 background: transparent;
 }
-.item-group{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Define las columnas con un ancho mínimo de 280px */
-  gap: 20px; 
-  width: 100%; 
-  margin: 0 auto; 
-}
-.wrapper .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Define las columnas con un ancho mínimo de 280px */
-  gap: 20px; 
-  width: 100%; 
-  margin: 0 auto; 
-}
 
- .item-group .wrapper {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+.wrapper  .item-group  {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr)); /* Esto garantiza que haya tres columnas con un espacio de 20px entre ellas */
+  gap: 20px;
+  width: 90%; /* Puedes ajustar este valor según tus necesidades */
+  margin: 0 auto; /* Para centrar el contenedor horizontalmente */
 }
 
  .item-group .card {
@@ -543,8 +531,6 @@ background: transparent;
   height: auto; 
  
 }
-
-
 
 .item-group .product {
   display: flex;
