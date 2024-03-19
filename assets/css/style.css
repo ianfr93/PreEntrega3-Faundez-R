@@ -488,30 +488,27 @@ margin-left: 10px;
 background: transparent;
 }
 
-.wrapper {
-  width: 90%; /* Puedes ajustar este valor según tus necesidades */
-  margin: 0 auto; /* Para centrar el contenedor horizontalmente */
-  display: flex; /* Establece el contenedor como un flex container */
-  flex-wrap: wrap; /* Para que los elementos se envuelvan cuando no haya suficiente espacio */
-  justify-content: space-between; /* Para distribuir uniformemente los elementos en el contenedor */
-  flex-direction: column; /* Para mostrar los elementos en columnas */
+
+
+.item-group .wrapper{
+  width: 100%;
+  
 }
 
 .wrapper .card {
-  width: calc(30.33% - 20px); /* Ancho del elemento con un pequeño margen */
+  width: 25%; 
   height: auto;
   border: 1px solid black;
   border-radius: 8px;
   overflow: hidden;
   transition: 0.2s linear;
   background-color: white;
-  margin-bottom: 30px; /* Espacio entre las filas */
+  margin-bottom: 30px; 
   background-color: #2c5d70;
-  margin-right: 0px; /* Margen derecho entre los elementos */
-  margin-left: 0px; /* Margen izquierdo entre los elementos */
-
- 
+  margin-left: 10px;
+  
 }
+
 
 .item-group .card:hover {
   transform: translateY(-5px);
@@ -529,7 +526,7 @@ background: transparent;
   background-size: contain; 
 }
 .item-group .card .image img {
-  width: 50%; 
+  width: 40%; 
   height: auto; 
  
 }
