@@ -619,11 +619,18 @@ td span {
 }
 
 
+/* Estilos para el contenedor del carro de compras */
+#historialCompras {
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+
 /* Estilos para los elementos de la tabla */
 #historialCompras table {
   width: 100%; 
   border-collapse: collapse; 
   margin-bottom: 20px; 
+
 }
 
 /* Estilos para las filas de la tabla */
@@ -647,6 +654,7 @@ td span {
   width: 20%; 
   text-align: center; 
 }
+
 
 .item-group .card .price button:hover {
   box-shadow: 0 0 10px 1px black;
