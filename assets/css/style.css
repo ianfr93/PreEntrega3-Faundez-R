@@ -615,6 +615,7 @@ background: transparent;
 td span {
   padding: 0 10px; 
   text-align: center; 
+  
 }
 
 
@@ -626,9 +627,10 @@ td span {
 
 /* Estilos para los elementos de la tabla */
 #historialCompras table {
-  width: 100%; 
+  width: 30%; 
   border-collapse: collapse; 
   margin-bottom: 20px; 
+ 
 
 }
 
@@ -652,6 +654,7 @@ td span {
 #historialCompras table td.precio {
   width: 20%; 
   text-align: center; 
+
 }
 
 
