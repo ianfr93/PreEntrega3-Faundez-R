@@ -618,8 +618,6 @@ td span {
   
 }
 
-
-/* Estilos para el contenedor del carro de compras */
 #historialCompras {
   max-height: 400px; 
   overflow-y: auto; 
