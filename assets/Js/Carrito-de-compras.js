@@ -6,7 +6,12 @@ function calcularTotal(productos) {
   });
   return total;
 }
+// Función para descontar el stock de un producto vendido
+function descontarStock(nombreProducto, cantidad) {
 
+  console.log("Descontando stock de " + nombreProducto + " en " + cantidad + " unidades.");
+
+}
 document.addEventListener("DOMContentLoaded", function () {
   // Agregar evento click a los botones "Añadir al carro"
   var botonesAgregar = document.querySelectorAll('.price button');
@@ -38,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var productoExistente = carrito.find(item => item.nombre === nombreProducto);
 
     if (productoExistente) {
-  
+      // Si el producto ya está en el carrito, aumentar la cantidad
       productoExistente.cantidad += 1;
     } else {
       // Crear objeto de producto para agregar al carrito
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-  
+    // Actualizar la interfaz de usuario con el contenido del carrito
     actualizarCarritoUI(carrito);
   }
 
@@ -62,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var indice = carrito.findIndex(item => item.nombre === nombreProducto);
     if (indice !== -1) {
-      carrito.splice(indice, 1); 
-      localStorage.setItem('carrito', JSON.stringify(carrito)); 
-      actualizarCarritoUI(carrito); 
+      carrito.splice(indice, 1); // Eliminar el producto del carrito
+      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
+      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
     }
   }
 
@@ -73,9 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var producto = carrito.find(item => item.nombre === nombreProducto);
     if (producto) {
-      producto.cantidad += 1; 
-      localStorage.setItem('carrito', JSON.stringify(carrito)); 
-      actualizarCarritoUI(carrito); 
+      producto.cantidad += 1; // Incrementar la cantidad
+      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
+      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
     }
   }
 
@@ -84,9 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var producto = carrito.find(item => item.nombre === nombreProducto);
     if (producto && producto.cantidad > 1) {
-      producto.cantidad -= 1; 
-      localStorage.setItem('carrito', JSON.stringify(carrito)); 
-      actualizarCarritoUI(carrito); 
+      producto.cantidad -= 1; // Decrementar la cantidad
+      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
+      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
     }
   }
 
@@ -206,32 +211,33 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Función para realizar el pago
-function realizarPago() {
-
-  var productos = obtenerCarrito(); 
-  var total = calcularTotal(productos); 
-  
-  // Mostrar información de la venta en la consola
-  console.log("Venta realizada:");
-  console.log("Lista de productos:");
-  productos.forEach(function(producto) {
-    console.log(producto.nombre + " - Cantidad: " + producto.cantidad + " - Precio unitario: $" + producto.precio.toFixed(2) + " - Total: $" + (producto.precio * producto.cantidad).toFixed(2));
-  });
-  console.log("Total de la venta: $" + total.toFixed(2));
-
-  // Verificar si el total es igual a 0
-  if (total === 0) {
-    // Mostrar mensaje de error
-    alert('No puedes realizar el pago porque el carrito está vacío.');
-  } else {
-    // Mostrar mensaje de alerta indicando que el pago se ha realizado con éxito
-    alert('Pago realizado con éxito. ¡Gracias por tu compra!');
+  function realizarPago() {
+    var productos = obtenerCarrito(); 
+    var total = calcularTotal(productos); 
     
-   
-    borrarVenta();
+    // Mostrar información de la venta en la consola
+    console.log("Venta realizada:");
+    console.log("Lista de productos:");
+    productos.forEach(function(producto) {
+      console.log(producto.nombre + " - Cantidad: " + producto.cantidad + " - Precio unitario: $" + producto.precio.toFixed(2) + " - Total: $" + (producto.precio * producto.cantidad).toFixed(2));
+    });
+    console.log("Total de la venta: $" + total.toFixed(2));
+
+    // Verificar si el total es igual a 0
+    if (total === 0) {
+      // Mostrar mensaje de error
+      alert('No puedes realizar el pago porque el carrito está vacío.');
+    } else {
+      // Descontar el stock de los productos vendidos
+      productos.forEach(function(producto) {
+        descontarStock(producto.nombre, producto.cantidad);
+      });
+
+      // Mostrar mensaje de alerta indicando que el pago se ha realizado con éxito
+      alert('Pago realizado con éxito. ¡Gracias por tu compra!');
+      
+      // Limpiar el carrito después del pago exitoso
+      borrarVenta();
+    }
   }
-}
-
-
-
 });
