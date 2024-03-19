@@ -8,10 +8,17 @@ function calcularTotal(productos) {
 }
 // Función para descontar el stock de un producto vendido
 function descontarStock(nombreProducto, cantidad) {
-
   console.log("Descontando stock de " + nombreProducto + " en " + cantidad + " unidades.");
 
+  // Actualizar el stock en el localStorage
+  var stockActual = localStorage.getItem(nombreProducto);
+  if (stockActual) {
+    stockActual = parseInt(stockActual);
+    var nuevoStock = stockActual - cantidad;
+    localStorage.setItem(nombreProducto, nuevoStock);
+  }
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   // Agregar evento click a los botones "Añadir al carro"
   var botonesAgregar = document.querySelectorAll('.price button');

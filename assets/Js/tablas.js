@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     function obtenerProductoPorId(productId) {
         return productos.find(producto => producto.id === parseInt(productId));
@@ -27,5 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     cargarProductos();
+
+   // Función para actualizar el stock de un producto
+function actualizarStock(nombreProducto, cantidad) {
+    const filaProducto = document.getElementById(`producto${nombreProducto}`);
+    if (filaProducto) {
+        const celdaCantidad = filaProducto.querySelector('td:nth-child(3)');
+        if (celdaCantidad) {
+            const stockActual = parseInt(celdaCantidad.textContent);
+            const nuevoStock = stockActual - cantidad;
+            celdaCantidad.textContent = nuevoStock;
+        }
+    }
+}
 });
 
