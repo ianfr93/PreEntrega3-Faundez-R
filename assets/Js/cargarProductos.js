@@ -30,6 +30,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const itemGroups = document.querySelectorAll('.item-group');
   const searchInput = document.getElementById('searchInput');
 
+  // Asignar 'todos' como la categoría inicial
+  const initialCategory = 'todos';
+
+  // Remover la clase 'active' de todas las categorías
+  categories.forEach(function (category) {
+    category.classList.remove('active');
+  });
+
+  // Mostrar todos los productos
+  itemGroups.forEach(function (group) {
+    group.style.display = 'block';
+  });
+
+  // Asignar la clase 'active' a la categoría inicial
+  categories.forEach(function (category) {
+    if (category.dataset.category === initialCategory) {
+      category.classList.add('active');
+    }
+  });
+
+  // Event listener para cambiar los productos según la categoría seleccionada
   categories.forEach(function (category) {
     category.addEventListener('click', function () {
       categories.forEach(function (c) {
@@ -50,20 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const initialCategory = 'aceites';
-  categories.forEach(function (category) {
-    if (category.dataset.category === initialCategory) {
-      category.classList.add('active');
-    }
-  });
-
-  itemGroups.forEach(function (group) {
-    if (group.id === initialCategory) {
-      group.style.display = 'block';
-    } else {
-      group.style.display = 'none';
-    }
-  });
 
   // Agregar evento de input al campo de búsqueda
   searchInput.addEventListener('input', function () {
@@ -71,29 +78,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Función para buscar productos
-function buscar() {
-  const inputBusqueda = searchInput.value.toLowerCase();
+  function buscar() {
+    const inputBusqueda = searchInput.value.toLowerCase();
 
-  itemGroups.forEach(function (group) {
-    const productosEnGrupo = group.querySelectorAll('.product-name');
-    let algunProductoCoincide = false;
+    itemGroups.forEach(function (group) {
+      const productosEnGrupo = group.querySelectorAll('.product-name');
+      let algunProductoCoincide = false;
 
-    productosEnGrupo.forEach(function (producto) {
-      const nombreProducto = producto.textContent.toLowerCase();
+      productosEnGrupo.forEach(function (producto) {
+        const nombreProducto = producto.textContent.toLowerCase();
 
-      if (nombreProducto.includes(inputBusqueda)) {
-        algunProductoCoincide = true;
+        if (nombreProducto.includes(inputBusqueda)) {
+          algunProductoCoincide = true;
+        }
+      });
+
+      // Mostrar u ocultar el grupo dependiendo de si algún producto coincide con la búsqueda
+      if (algunProductoCoincide || inputBusqueda === '') {
+        group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
       }
     });
-
-    // Mostrar u ocultar el grupo dependiendo de si algún producto coincide con la búsqueda
-    if (algunProductoCoincide || inputBusqueda === '') {
-      group.style.display = 'block';
-    } else {
-      group.style.display = 'none';
-    }
-  });
-}
+  }
 
 });
-

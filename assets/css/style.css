@@ -487,27 +487,41 @@ margin-left: 10px;
 .dropdown{
 background: transparent;
 }
-
-
-
-.item-group .wrapper{
-  width: 100%;
-  
+.wrappers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.wrapper .card {
-  width: 25%; 
+.item-group {
+  flex: 0 0 calc(20.333% - 20px);
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 0 0 calc(20.333% - 20px);
+  min-width: 260px; /* Ancho mínimo para las tarjetas */
   height: auto;
   border: 1px solid black;
   border-radius: 8px;
   overflow: hidden;
   transition: 0.2s linear;
-  background-color: white;
   margin-bottom: 30px; 
   background-color: #2c5d70;
-  margin-left: 10px;
-  
+  margin-left: 10px; 
+  margin-right: 10px; 
 }
+
+
+
+
+/* Ajustamos el margen derecho de todas las tarjetas cuando hay menos de tres por fila */
+.wrappers .card:nth-last-child(-n+2) {
+  margin-right: 10px; /* Espacio entre las tarjetas */
+  width: calc(100% - 10px);
+}
+
+
 
 
 .item-group .card:hover {
@@ -689,7 +703,7 @@ td span {
 
 
 @media only screen and (max-width: 900px) {
-  .item-group .wrapper {
+  .item-group .wrappers {
     justify-content: center; /* Centra las tarjetas en dispositivos móviles */
   }
 
@@ -698,6 +712,18 @@ td span {
   }
 }
 
+/* Ajusta el ancho de las tarjetas cuando hay menos de tres por fila */
+@media (max-width: 999px) {
+  .wrappers .card {
+    width: calc(50% - 20px); /* Establece el ancho para dos tarjetas en una fila en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 699px) {
+  .wrappers .card {
+    width: calc(100% - 20px); /* Establece el ancho para una tarjeta en una fila en pantallas aún más pequeñas */
+  }
+}
 
 
 
