@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var productoExistente = carrito.find(item => item.nombre === nombreProducto);
 
     if (productoExistente) {
-      // Si el producto ya está en el carrito, aumentar la cantidad
+  
       productoExistente.cantidad += 1;
     } else {
       // Crear objeto de producto para agregar al carrito
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    // Actualizar la interfaz de usuario con el contenido del carrito
+  
     actualizarCarritoUI(carrito);
   }
 
@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var indice = carrito.findIndex(item => item.nombre === nombreProducto);
     if (indice !== -1) {
-      carrito.splice(indice, 1); // Eliminar el producto del carrito
-      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
-      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
+      carrito.splice(indice, 1); 
+      localStorage.setItem('carrito', JSON.stringify(carrito)); 
+      actualizarCarritoUI(carrito); 
     }
   }
 
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var producto = carrito.find(item => item.nombre === nombreProducto);
     if (producto) {
-      producto.cantidad += 1; // Incrementar la cantidad
-      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
-      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
+      producto.cantidad += 1; 
+      localStorage.setItem('carrito', JSON.stringify(carrito)); 
+      actualizarCarritoUI(carrito); 
     }
   }
 
@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var carrito = obtenerCarrito();
     var producto = carrito.find(item => item.nombre === nombreProducto);
     if (producto && producto.cantidad > 1) {
-      producto.cantidad -= 1; // Decrementar la cantidad
-      localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar el carrito en localStorage
-      actualizarCarritoUI(carrito); // Actualizar la interfaz de usuario
+      producto.cantidad -= 1; 
+      localStorage.setItem('carrito', JSON.stringify(carrito)); 
+      actualizarCarritoUI(carrito); 
     }
   }
 
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         celdaCantidad.appendChild(botonAumentar);
 
-        celdaPrecio.textContent = '$' + (producto.precio * producto.cantidad).toFixed(2); // Formatear el precio con dos decimales
+        celdaPrecio.textContent = '$' + (producto.precio * producto.cantidad).toFixed(2); 
 
         // Ícono de eliminación
         var iconoEliminar = document.createElement('i');
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var btnPagar = document.getElementById('btnPagar');
   if (btnPagar) {
     btnPagar.addEventListener('click', function (event) {
-      event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+      event.preventDefault(); 
 
       realizarPago();
     });
@@ -207,9 +207,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para realizar el pago
 function realizarPago() {
-  // Aquí puedes agregar la lógica para obtener información de la venta
-  var productos = obtenerCarrito(); // Obtener los productos del carrito
-  var total = calcularTotal(productos); // Calcular el total de la venta
+
+  var productos = obtenerCarrito(); 
+  var total = calcularTotal(productos); 
   
   // Mostrar información de la venta en la consola
   console.log("Venta realizada:");
@@ -227,7 +227,7 @@ function realizarPago() {
     // Mostrar mensaje de alerta indicando que el pago se ha realizado con éxito
     alert('Pago realizado con éxito. ¡Gracias por tu compra!');
     
-    // Después del pago exitoso, puedes limpiar el carrito si lo deseas
+   
     borrarVenta();
   }
 }
